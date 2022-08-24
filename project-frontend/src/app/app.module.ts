@@ -3,18 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RopasComponent } from './ropas/ropas.component';
-import {HttpClientModule} from "@angular/common/http";
+import { TemporadaComponent } from './temporada/temporada.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RopasComponent
+    TemporadaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
