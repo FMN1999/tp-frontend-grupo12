@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Temporada } from 'src/app/models/temporada-reqres-response';
 
 @Component({
   selector: 'app-temporada',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./temporada.component.css']
 })
 export class TemporadaComponent implements OnInit {
+
+  @Input() temporada: Temporada;
 
   constructor() { }
 
