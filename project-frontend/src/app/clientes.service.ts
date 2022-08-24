@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ClienteReqResResponse } from './models/cliente-reqres-response';
- 
+
 @Injectable({
   providedIn: 'root'
 })
