@@ -9,18 +9,19 @@ import { ClientesService } from './clientes.service';
 import { EmpleadosService } from './empleados.service';
 import { PreciosropaService } from './preciosropa.service';
 import { RopasService } from './ropas.service';
-import { TemporadaComponent } from './temporada/temporada.component';
+import { TemporadaComponent } from './temporadas/temporada/temporada.component';
 import { TemporadasService } from './temporadas.service';
 import { TiporopasService } from './tiporopas.service';
 import { RopaComponent } from './ropas/ropa/ropa.component';
 import { RopasComponent } from './ropas/ropas.component';
+import { TemporadasComponent } from './temporadas/temporadas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemporadaComponent,
     RopaComponent, 
-    RopasComponent
+    RopasComponent, TemporadasComponent
   ],
   imports: [
     BrowserModule,
