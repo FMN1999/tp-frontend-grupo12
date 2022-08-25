@@ -6,12 +6,12 @@ import {HttpClient} from "@angular/common/http";
 })
 export class RopasService {
 
-  readonly baseURL = "http://localhost:4200/api/";
+  readonly baseURL = "http://localhost:3000/api/";
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClientService: HttpClient) { }
 
   getRopas() {
     const url = this.baseURL + "ropas";
-      return this.http.get<any>(url);
+    return this.httpClientService.get<any>(url);
   }
 }
