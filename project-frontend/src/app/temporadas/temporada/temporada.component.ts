@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Temporada } from 'src/app/models/temporada-reqres-response';
+import { Temporada } from '../../models/temporada-reqres-response';
 
 @Component({
   selector: 'app-temporada',

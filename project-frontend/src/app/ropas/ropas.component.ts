@@ -9,41 +9,17 @@ import { RopasService } from '../ropas.service';
 })
 export class RopasComponent implements OnInit {
 
-  public ropas:any = [];
-  detallesRopas:any = [];
-  preciosRopas:any = [];
 
-  public ropita:any = [];
+  ropas:any= [];
+  constructor(private ropaService: RopasService) {}
 
-  constructor(private service: RopasService) { }
 
-  ngOnInit(): void {
-    this.loadRopas();
+  loadRopas(){
+    this.ropaService.getRopas().subscribe(response => this.ropas = response);
   }
 
   ngOnInit(): void{
     this.loadRopas();
   }
 
-  loadDetalleRopas(){
-    this.service.getDetalleRopas().subscribe(response => this.detallesRopas = response);
-  }
-
-  loadCategoriaRopas(){
-    this.service.getCategoriaRopas().subscribe(response => this.preciosRopas = response);
-  }
-
-  cargarRopa(){
-    let id:any = document.getElementById('idRopa')?.innerHTML;
-    this.service.cargarRopa(id).subscribe(response => this.ropita = response);
-  }
-
-}
-
-export class Ropa {
-  id: string | undefined;
-  detalle: string | undefined;
-  marca: string | undefined;
-  categoria: string | undefined;
-  talle: string | undefined;
 }
