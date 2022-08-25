@@ -9,6 +9,12 @@ hijo denominado 'ropa', que se encargará de mostrar los atributos del modelo de
 <button (click)="loadRopas()">Cargar</button>
 -->
 
-<app-ropa *ngFor="let rop of ropas.body"
-[ropa] = "rop">
+<div style="text-align: center">
+  <button style="cursor: pointer;" (click)="agregar()">+</button>
+</div>
+
+
+<app-ropa *ngFor="let rop of ropas.body; let i = index"
+[ropa] = "rop"
+[indice] = "i">
 </app-ropa>

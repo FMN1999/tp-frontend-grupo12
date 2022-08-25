@@ -1,15 +1,29 @@
 <div>
     <table>
         <thead>
-            <tr>
-                <th>Marca</th>
-            </tr>
+                <th>Marca</th><td>{{ropa.marca}}</td>
+                <tr>
+                    <th>Categoría</th><td>{{ropa.categoria}}</td>
+                </tr>
+                <th>Talle</th><td>{{ropa.talle}}</td>
+                <tr>
+                    <th>Detalle</th><td>{{ropa.detalle}}</td>
+                </tr>
+                <tr>
+                    <th>Tipo de ropa</th><td>{{ropa.tipoRopa}}</td>
+                </tr>
+                <tr>
+                    <th>Temporada</th><td>{{ropa.temporada}}</td>
+                </tr>
+                <tr>
+                    <th>Precio de ropa</th><td>{{ropa.precioRopa}}</td>
+                </tr>
+                <tr>
+                    <th>Id</th><td>{{ropa._id}}</td>
+                </tr>
+                <a [routerLink]="['/ropas', indice]">Editar</a>
         </thead>
-        <tbody>
-            <tr>
-                <td>{{ropa.marca}}</td>
-            </tr>
-        </tbody>
     </table>
 </div>
+
 

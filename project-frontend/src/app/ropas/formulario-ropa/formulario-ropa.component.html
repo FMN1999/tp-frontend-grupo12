@@ -1,0 +1,26 @@
+<div>
+    <form #f="ngForm" (ngSubmit)="f.form.valid && guardarRopa()">
+        <input type="text" placeholder="Marca" name="marca" id="marca" [(ngModel)]="marcaInput" required>
+        <br>
+        <input type="text" placeholder="Categoría" name="cate" id="cate" [(ngModel)]="categoriaInput" required>
+        <br>
+        <input type="text" placeholder="Talle" name="talle" id="talle" [(ngModel)]="talleInput" required>
+        <br>
+        <input type="text" placeholder="Detalle" name="detalle" id="detalle" [(ngModel)]="detalleInput" required>
+        <br>
+        <input type="text" placeholder="Tipo de ropa" name="tipoRopa" id="tipoRopa" 
+        [(ngModel)]="tipoRopaInput" required>
+        <br>
+        <input type="text" placeholder="Temporada" name="temporada" id="temporada" 
+        [(ngModel)]="temporadaInput" required>
+        <br>
+        <input type="text" placeholder="Precio de ropa" name="precioRopa" id="precioRopa" 
+        [(ngModel)]="precioRopaInput" required>
+        <br>
+        <button type="submit" style="cursor: pointer;">+</button>
+
+        <!--Botón de ELIMINAR. Solo se mostrará en modo 'edición', es decir, 
+            si el índice del elemento NO es nulo.-->
+        <button type="submit" style="cursor: pointer;" *ngIf="indiceRopa != null">-</button>
+    </form>
+</div>
