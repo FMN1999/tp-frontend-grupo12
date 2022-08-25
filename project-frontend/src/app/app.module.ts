@@ -17,13 +17,15 @@ import { RopasComponent } from './ropas/ropas.component';
 import { TemporadasComponent } from './temporadas/temporadas.component';
 import { TiposropasComponent } from './tiposropas/tiposropas.component';
 import { TiporopaComponent } from './tiposropas/tiporopa/tiporopa.component';
+import { ClienteComponent } from './clientes/cliente/cliente.component';
+import { ClientesComponent } from './clientes/clientes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemporadaComponent,
     RopaComponent, 
-    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent
+    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent
   ],
   imports: [
     BrowserModule,
