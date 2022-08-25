@@ -15,13 +15,15 @@ import { TiporopasService } from './tiporopas.service';
 import { RopaComponent } from './ropas/ropa/ropa.component';
 import { RopasComponent } from './ropas/ropas.component';
 import { TemporadasComponent } from './temporadas/temporadas.component';
+import { TiposropasComponent } from './tiposropas/tiposropas.component';
+import { TiporopaComponent } from './tiposropas/tiporopa/tiporopa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemporadaComponent,
     RopaComponent, 
-    RopasComponent, TemporadasComponent
+    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent
   ],
   imports: [
     BrowserModule,

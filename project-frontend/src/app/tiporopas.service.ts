@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TipoRopaReqResResponse } from './models/tiporopa-reqres-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TiporopasService {
 
-  constructor(private http: HttpClient) { }
+  readonly baseURL = "http://localhost:3000/api/";
 
-  baseUrl = "http://localhost:3000";
+  constructor(private httpClientService: HttpClient) { }
 
   getTipoRopas() {
-    const url = this.baseUrl + "/api/tiposRopa";
-    return this.http.get<TipoRopaReqResResponse>(url);
+    const url = this.baseURL + "tiposRopa";
+    return this.httpClientService.get<any>(url);
   }
 }
