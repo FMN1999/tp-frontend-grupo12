@@ -18,11 +18,17 @@ export class RopasService {
     return this.httpClientService.get<any>(url);
   }
   
-  getRopaById(indice:number){
-    let ropaBuscar = this.ropas[indice];
-    return ropaBuscar;
+
+  //Método con problemas
+  getRopaById(id:String){
+    const url = this.baseURL + `ropas/${id}`;
+    let ropa =  this.httpClientService.get<any>(url)
+                                      .subscribe( (response) => ropa = response.body);
+    return ropa as Ropa;
   }
 
+
+  //Todavía no está codificado
   updateRopa(indiceRopa:number, ropa:Ropa){
     const url = this.baseURL + `ropas/${ropa._id}`;
     let ropa1 = this.ropas[indiceRopa] as Ropa;
@@ -39,6 +45,8 @@ export class RopasService {
     error => console.log("Error al actualizar") );
   }
 
+
+  //Funcionando correctamente
   agregarRopa(ropa:Ropa){
     const url = this.baseURL + "ropas";
     this.httpClientService.post(url, ropa)

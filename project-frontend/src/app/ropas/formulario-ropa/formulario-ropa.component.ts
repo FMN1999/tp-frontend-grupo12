@@ -19,7 +19,8 @@ export class FormularioRopaComponent implements OnInit {
   tipoRopaInput:string;
   temporadaInput:string;
   precioRopaInput:string;
-  indiceRopa: number;
+  indiceRopa: String;
+  
 
 
   //Inyecto el servicio de Router
@@ -31,14 +32,20 @@ export class FormularioRopaComponent implements OnInit {
 
     //Capturo el id que me viene del formulario de ropas.
     this.indiceRopa = this.route.snapshot.params['id'];
-
+    console.log("Indice de ropa: " + this.indiceRopa);
     //Si el índice es diferente de nulo, entonces quiere decir que estamos en modo 'edicion', ya que se ha 
     //seleccionado un elemento que no se está agregando, sino que ya se encuentra dentro del arreglo.
-    if(this.indiceRopa){
+    if(this.indiceRopa != null){
 
       //Busco la ropa en el array de ropas
-      let ropa = this.ropaService.getRopaById(this.indiceRopa) as Ropa;
+      let ropa = this.ropaService.getRopaById(this.indiceRopa);
 
+
+      console.log("Datos ropa: ");
+      console.log("-------------------------");
+      console.log("Id de ropa: " + ropa._id);
+      console.log("Marca de ropa: " + ropa.marca);
+      
 
       this.marcaInput = ropa.marca;
       this.categoriaInput = ropa.categoria;
@@ -49,21 +56,19 @@ export class FormularioRopaComponent implements OnInit {
       this.precioRopaInput = ropa.precioRopa;
 
     }
-
-
   }
 
 
   guardarRopa(){
+
+    //Creo el objeto de Ropa
     let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput, 
       this.detalleInput, this.tipoRopaInput, this.temporadaInput, this.precioRopaInput);
-
-      console.log("Datos de ropa a agregar: " + ropa1);
 
       //Valido que el índice sea distinto de nulo. Si así ocurre, quiere decir que estamos en modo 
       //'edición'
       if(this.indiceRopa){
-        this.ropaService.updateRopa(this.indiceRopa, ropa1);
+        //this.ropaService.updateRopa(this.indiceRopa, ropa1);
       }else{
         this.ropaService.agregarRopa(ropa1);
       }

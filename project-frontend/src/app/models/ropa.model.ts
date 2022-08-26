@@ -8,6 +8,4 @@ export class Ropa{
                 public detalle: string, public tipoRopa: string, 
                 public temporada: string, public precioRopa: string, public _id?: string) {}
 
-
-    
 }

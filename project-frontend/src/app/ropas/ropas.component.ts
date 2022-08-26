@@ -24,6 +24,7 @@ export class RopasComponent implements OnInit {
     this.router.navigate(['ropas/agregar']);
   }
 
+  
 
   ngOnInit(): void{
     this.loadRopas();
