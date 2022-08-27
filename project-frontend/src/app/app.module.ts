@@ -20,7 +20,7 @@ import { TiporopaComponent } from './tiposropas/tiporopa/tiporopa.component';
 import { ClienteComponent } from './clientes/cliente/cliente.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
-import { EmpleadoComponent } from './empleado/empleado.component';
+import { EmpleadoComponent } from './empleados/empleado/empleado.component';
 import { PrecioropaComponent } from './preciosropas/precioropa/precioropa.component';
 import { PreciosropasComponent } from './preciosropas/preciosropas.component';
 
