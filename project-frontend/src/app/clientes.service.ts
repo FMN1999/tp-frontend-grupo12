@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ClienteReqResResponse } from './models/cliente-reqres-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
 
-  constructor(private http: HttpClient) { }
+  readonly baseURL = "http://localhost:3000/api/";
 
-  baseUrl = "http://localhost:3000";
+  constructor(private httpClientService: HttpClient) { }
 
   getClientes() {
-    const url = this.baseUrl + "/api/clientes";
-    return this.http.get<ClienteReqResResponse>(url);
+    const url = this.baseURL + "clientes";
+    return this.httpClientService.get<any>(url);
   }
 }
