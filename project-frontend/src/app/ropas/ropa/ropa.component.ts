@@ -9,7 +9,7 @@ import { Ropa } from '../../models/ropa.model';
 export class RopaComponent implements OnInit {
 
   @Input() ropa: Ropa;
-
+  @Input() indice: string;
 
   constructor() { }
 

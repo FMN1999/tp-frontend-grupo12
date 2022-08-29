@@ -9,24 +9,27 @@ import { ClientesService } from './clientes.service';
 import { EmpleadosService } from './empleados.service';
 import { PreciosropaService } from './preciosropa.service';
 import { RopasService } from './ropas.service';
-import { TemporadaComponent } from './temporadas/temporada/temporada.component';
+import { TemporadaComponent } from './temporadas/temporada.component';
 import { TemporadasService } from './temporadas.service';
 import { TiporopasService } from './tiporopas.service';
 import { RopaComponent } from './ropas/ropa/ropa.component';
 import { RopasComponent } from './ropas/ropas.component';
-import { TemporadasComponent } from './temporadas/temporadas.component';
+import { FormularioRopaComponent } from './ropas/formulario-ropa/formulario-ropa.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemporadaComponent,
     RopaComponent, 
-    RopasComponent, TemporadasComponent
+    RopasComponent, 
+    FormularioRopaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HttpClientModule
+    HttpClientModule, 
+    FormsModule
   ],
   providers: [RopasService, ClientesService, 
     TiporopasService, TemporadasService, 
