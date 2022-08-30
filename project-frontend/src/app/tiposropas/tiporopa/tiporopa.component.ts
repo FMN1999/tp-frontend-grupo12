@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TipoRopa } from 'src/app/models/tiporopa-reqres-response';
+import { TipoRopa } from '../../models/tiporopa-reqres-response';
 
 @Component({
   selector: 'app-tiporopa',

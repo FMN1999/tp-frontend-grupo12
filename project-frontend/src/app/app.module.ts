@@ -30,17 +30,18 @@ import { PreciosropasComponent } from './preciosropas/preciosropas.component';
   declarations: [
     AppComponent,
     TemporadaComponent,
-    RopaComponent, 
+    RopaComponent,
+    FormularioRopaComponent,
     RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent, EmpleadosComponent, EmpleadoComponent, PrecioropaComponent, PreciosropasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    HttpClientModule, 
+    AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
-  providers: [RopasService, ClientesService, 
-    TiporopasService, TemporadasService, 
+  providers: [RopasService, ClientesService,
+    TiporopasService, TemporadasService,
     PreciosropaService, EmpleadosService],
   bootstrap: [AppComponent]
 })

@@ -8,7 +8,7 @@ import { Ropa } from '../../models/ropa.model';
 })
 export class RopaComponent implements OnInit {
 
-  @Input() ropa: Ropa;
+  @Input() rp: any;
   @Input() indice: string;
 
   constructor() { }

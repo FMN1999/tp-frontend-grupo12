@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69c7de33-bad9-46fe-aa0b-418ed44fcb1a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/ropas.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/ropas.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="69c7de33-bad9-46fe-aa0b-418ed44fcb1a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,8 +26,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/franc/WebstormProjects/tp-backend-grupo-12&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/franc/WebstormProjects/tp-frontend-grupo12&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;JavaScript.Libraries&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\franc\\WebstormProjects\\tp-frontend-grupo12\\project-frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -53,6 +50,9 @@
       <workItem from="1661276665119" duration="1418000" />
       <workItem from="1661377975804" duration="462000" />
       <workItem from="1661437374542" duration="2207000" />
+      <workItem from="1661813122214" duration="1921000" />
+      <workItem from="1661818634873" duration="4667000" />
+      <workItem from="1661879469172" duration="2637000" />
     </task>
     <servers />
   </component>
@@ -69,5 +69,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

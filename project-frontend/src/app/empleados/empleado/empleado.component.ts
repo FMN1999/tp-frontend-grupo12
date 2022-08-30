@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Empleado } from 'src/app/models/empleado-reqres-response';
+import { Empleado } from '../../models/empleado-reqres-response';
 
 @Component({
   selector: 'app-empleado',
@@ -9,7 +9,7 @@ import { Empleado } from 'src/app/models/empleado-reqres-response';
 export class EmpleadoComponent implements OnInit {
 
   @Input() empleado: Empleado;
-  
+
   constructor() { }
 
   ngOnInit(): void {

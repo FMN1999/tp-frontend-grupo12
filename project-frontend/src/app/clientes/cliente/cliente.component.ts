@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/models/cliente-reqres-response';
+import { Cliente } from '../../models/cliente-reqres-response';
 
 @Component({
   selector: 'app-cliente',
