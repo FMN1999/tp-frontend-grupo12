@@ -1,14 +1,12 @@
 <!--Este componente contendra la lista a iterar de las ropas, el cual contendrá un componente 
 hijo denominado 'ropa', que se encargará de mostrar los atributos del modelo de ropa-->
 
-<!--
-<pre>
-  {{ropas | json}}
-</pre>
+<div style="text-align: center">
+  <button style="cursor: pointer;" (click)="agregar()">+</button>
+</div>
 
-<button (click)="loadRopas()">Cargar</button>
--->
 
 <app-ropa *ngFor="let rop of ropas.body"
-[ropa] = "rop">
+[ropa] = "rop"
+[indice] = "rop._id">
 </app-ropa>
