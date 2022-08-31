@@ -12,10 +12,12 @@ import { Router } from '@angular/router';
 export class RopasComponent implements OnInit {
 
   ropas:any= [];
-  constructor(private ropaService: RopasService, 
+  ropa: Ropa;
+  rp: any = null;
+  constructor(private ropaService: RopasService,
               private router: Router) {}
 
-  
+
   loadRopas(){
     this.ropaService.getRopas().subscribe(response => this.ropas = response);
   }
@@ -24,7 +26,9 @@ export class RopasComponent implements OnInit {
     this.router.navigate(['ropas/agregar']);
   }
 
-  
+  getRopaById(id:String){
+    return this.ropaService.getRopaById(id);
+  }
 
   ngOnInit(): void{
     this.loadRopas();

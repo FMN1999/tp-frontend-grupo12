@@ -1,12 +1,18 @@
-<!--Este componente contendra la lista a iterar de las ropas, el cual contendrá un componente 
-hijo denominado 'ropa', que se encargará de mostrar los atributos del modelo de ropa-->
-
-<div style="text-align: center">
-  <button style="cursor: pointer;" (click)="agregar()">+</button>
+<div *ngFor="let ropa of ropas.body">
+  <h1>{{ropa.detalle}}</h1>
+  <button style="cursor: pointer;" (click)="rp=getRopaById(ropa._id)">Editar</button>
+</div>
+<div *ngIf="rp!==null">
+  <app-ropa
+    [rp] = "rp"
+    [indice] = "rp._id">
+  </app-ropa>
 </div>
 
+<!--
+<div style="text-align: center">
+  <button style="cursor: pointer;" (click)="agregar()">+</button>
+</div> -->
 
-<app-ropa *ngFor="let rop of ropas.body"
-[ropa] = "rop"
-[indice] = "rop._id">
-</app-ropa>
+<!--  -->
+
