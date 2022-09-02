@@ -21,6 +21,7 @@
 
         <!--Botón de ELIMINAR. Solo se mostrará en modo 'edición', es decir, 
             si el índice del elemento NO es nulo.-->
-        <button type="submit" style="cursor: pointer;" *ngIf="indiceRopa != null">-</button>
+        <button type="submit" (click)="eliminarRopa()"  style="cursor: pointer;" 
+        *ngIf="indiceRopa != null">-</button>
     </form>
 </div>
