@@ -18,15 +18,13 @@ export class RopasService {
     return this.httpClientService.get<any>(url);
   }
   
-
-  //Método con problemas
+  //Funcionando correctamente
   getRopaById(id:String){
     const url = this.baseURL + `ropas/${id}`;
-    let ropa =  this.httpClientService.get<any>(url)
-                                      .subscribe( (response) => ropa = response.body);
-    return ropa as Ropa;
+    return this.httpClientService.get<any>(url);
   }
 
+<<<<<<< HEAD
   /*
   //Todavía no está codificado
   updateRopa(indiceRopa:number, ropa:Ropa){
@@ -43,6 +41,18 @@ export class RopasService {
     this.httpClientService.put(url, ropa1)
     .subscribe( response => console.log("Ropa actualizada"), 
     error => console.log("Error al actualizar") );
+=======
+  //Funcionando correctamente
+  eliminarRopa(id:String){
+    const url = this.baseURL + `ropas/${id}`;
+    return this.httpClientService.delete<any>(url);
+  }
+
+  //Funcionando correctamente
+  updateRopa(id:String, ropa:Ropa){
+    const url = this.baseURL + `ropas/${id}`;
+    return this.httpClientService.put<any>(url, ropa);
+>>>>>>> branch-guille
   }
 
 
