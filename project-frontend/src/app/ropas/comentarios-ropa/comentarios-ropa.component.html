@@ -1,0 +1,23 @@
+<h1>Formulario comentario de ropas</h1>
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="guardarComentario()">
+
+            <label for="formComentario">Detalle</label>
+            <input type="text" id="detalle" name="detalle" [(ngModel)]="detalle" required>
+
+            <label for="formComentario">Id de Ropa</label>
+            <input type="text" id="idRopa" name="idRopa" [(ngModel)]="idRopa" required>
+
+            <label for="formComentario">Nombre</label>
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="nombreUsuario" required>
+
+            <label for="formComentario">Apellido</label>
+            <input type="text" id="apellido" name="apellido" [(ngModel)]="apellidoUsuario" required>
+
+            <label for="formComentario">Fecha</label>
+            <input type="text" id="fecha" name="fecha" [(ngModel)]="fecha" required>
+
+        <button type="submit">Guardar</button>
+    </form>
+    
+</div>
