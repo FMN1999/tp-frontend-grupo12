@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Temporada } from '../../models/temporada-reqres-response';
+import { TemporadaReqResResponse  } from '../../models/temporada-reqres-response';
 
 @Component({
   selector: 'app-temporada',
@@ -8,7 +8,7 @@ import { Temporada } from '../../models/temporada-reqres-response';
 })
 export class TemporadaComponent implements OnInit {
 
-  @Input() temporada: Temporada;
+  @Input() temporada: TemporadaReqResResponse ;
 
   constructor() { }
 

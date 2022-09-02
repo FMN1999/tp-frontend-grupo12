@@ -1,3 +1,10 @@
-<app-empleado *ngFor="let t of empleados.body"
-[empleado] = "t">
-</app-empleado>
+<div id="menu">
+    <ul>
+        <li><a href="#">Empleados</a>
+            <ul>
+                <app-empleado *ngFor="let t of empleados.body" [empleado] = "t"></app-empleado>
+            </ul>
+        </li>
+    </ul>
+</div>
+

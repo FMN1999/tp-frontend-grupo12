@@ -25,6 +25,7 @@ import { EmpleadosComponent } from './empleados/empleados.component';
 import { EmpleadoComponent } from './empleados/empleado/empleado.component';
 import { PrecioropaComponent } from './preciosropas/precioropa/precioropa.component';
 import { PreciosropasComponent } from './preciosropas/preciosropas.component';
+import { ComentariosRopaComponent } from './comentarios-ropa/comentarios-ropa.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { PreciosropasComponent } from './preciosropas/preciosropas.component';
     TemporadaComponent,
     RopaComponent,
     FormularioRopaComponent,
-    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent, EmpleadosComponent, EmpleadoComponent, PrecioropaComponent, PreciosropasComponent
+    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent, EmpleadosComponent, EmpleadoComponent, PrecioropaComponent, PreciosropasComponent, ComentariosRopaComponent
   ],
   imports: [
     BrowserModule,

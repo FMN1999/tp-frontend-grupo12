@@ -27,7 +27,7 @@ export class RopasService {
     return ropa as Ropa;
   }
 
-
+  /*
   //Todavía no está codificado
   updateRopa(indiceRopa:number, ropa:Ropa){
     const url = this.baseURL + `ropas/${ropa._id}`;
@@ -53,5 +53,5 @@ export class RopasService {
     .subscribe(response => console.log("Ropa agregada correctamente"), 
     error => console.log("Error al agregar" + error));
   }
-
+*/
 }

@@ -39,7 +39,7 @@ export class FormularioRopaComponent implements OnInit {
       //Busco la ropa en el array de ropas
       let ropa = this.ropaService.getRopaById(this.indiceRopa);
 
-
+      /*
       console.log("Datos ropa: ");
       console.log("-------------------------");
       console.log("Id de ropa: " + ropa._id);
@@ -74,5 +74,7 @@ export class FormularioRopaComponent implements OnInit {
 
       this.router.navigate(['ropas']);
   }
-
+*/
 }
+
+}}

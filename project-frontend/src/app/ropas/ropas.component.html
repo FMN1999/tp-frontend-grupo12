@@ -1,18 +1,21 @@
-<div *ngFor="let ropa of ropas.body">
-  <h1>{{ropa.detalle}}</h1>
-  <button style="cursor: pointer;" (click)="rp=getRopaById(ropa._id)">Editar</button>
+<h1>Listado de ropas</h1>
+<div *ngFor="let ropa of ropas.body" class="column">
+  <p>Marca: {{ropa.marca}}</p>
+  <hr>
+  <p>Categoria: {{ropa.categoria}}</p> 
+  <hr>     
+  <p>Detalle: {{ropa.detalle}}</p>
+  <hr>
+  <p>Talle: {{ropa.talle}}</p>  
+  <button style="cursor: pointer;" class="boton" (click)="rp=getRopaById(ropa._id)">Editar</button>
 </div>
-<div *ngIf="rp!==null">
+
+
+<!-- <div *ngIf="rp!==null">
   <app-ropa
     [rp] = "rp"
     [indice] = "rp._id">
   </app-ropa>
-</div>
-
-<!--
-<div style="text-align: center">
-  <button style="cursor: pointer;" (click)="agregar()">+</button>
 </div> -->
 
-<!--  -->
 

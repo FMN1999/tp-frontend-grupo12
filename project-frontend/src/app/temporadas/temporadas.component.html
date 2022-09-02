@@ -1,1 +1,9 @@
-<p>temporada works!</p>
+<div id="menu">
+    <ul>
+        <li><a href="#">Temporadas</a>
+            <ul>
+                <app-temporada *ngFor="let t of temporadas.body" [temporada] = "t"></app-temporada>
+            </ul>            
+        </li>        
+    </ul>
+</div>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Cliente } from '../../models/cliente-reqres-response';
+import { ClienteReqResResponse } from '../../models/cliente-reqres-response';
 
 @Component({
   selector: 'app-cliente',
@@ -8,7 +8,7 @@ import { Cliente } from '../../models/cliente-reqres-response';
 })
 export class ClienteComponent implements OnInit {
 
-  @Input() cliente: Cliente;
+  @Input() cliente: ClienteReqResResponse;
 
   constructor() { }
 

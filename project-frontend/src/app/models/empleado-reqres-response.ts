@@ -12,11 +12,3 @@ export interface ID {
 export interface Legajo {
     $numberLong: string;
 }
-
-
-export class Empleado{
-
-    //Sintaxis simplificada, en la cual dentro del constructor declaramos e inicializamos los atributos.
-    //Al poner 'public' se crea y se declara el atributo, como parte del atributo de nuestra clase.
-    constructor(public legajo: string, public nombre: string, public apellido: string) {}
-}

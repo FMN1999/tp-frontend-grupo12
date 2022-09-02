@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TipoRopa } from '../../models/tiporopa-reqres-response';
+import { TipoRopaReqResResponse } from '../../models/tiporopa-reqres-response';
 
 @Component({
   selector: 'app-tiporopa',
@@ -8,7 +8,7 @@ import { TipoRopa } from '../../models/tiporopa-reqres-response';
 })
 export class TiporopaComponent implements OnInit {
 
-  @Input() tiporopa: TipoRopa
+  @Input() tiporopa: TipoRopaReqResResponse
 
   constructor() { }
 

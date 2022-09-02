@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PrecioRopa } from '../../models/precioropa-reqres-response';
+import { PrecioRopaReqResResponse } from '../../models/precioropa-reqres-response';
 
 @Component({
   selector: 'app-precioropa',
@@ -8,7 +8,7 @@ import { PrecioRopa } from '../../models/precioropa-reqres-response';
 })
 export class PrecioropaComponent implements OnInit {
 
-  @Input() precio: PrecioRopa;
+  @Input() precio: PrecioRopaReqResResponse;
 
   constructor() { }
 

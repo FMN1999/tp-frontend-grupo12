@@ -1,3 +1,9 @@
-<app-cliente *ngFor="let t of clientes.body"
-[cliente] = "t">
-</app-cliente>
+<div id="menu">
+    <ul>
+        <li><a href="#">Clientes</a>
+            <ul>
+                <app-cliente *ngFor="let t of clientes.body" [cliente] = "t"></app-cliente>
+            </ul>            
+        </li>        
+    </ul>
+</div>
