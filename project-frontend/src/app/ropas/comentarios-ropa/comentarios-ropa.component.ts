@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ComentarioRopa } from '../../models/comentario-ropa-model';
 import { ComentariosRopaService } from '../../comentarios-ropa.service';
-import mongoose from 'mongoose';
+import {mongoose} from '../../../../../../tp-backend-grupo-12/node_modules/mongoose/lib';
 
 @Component({
   selector: 'app-comentarios-ropa',

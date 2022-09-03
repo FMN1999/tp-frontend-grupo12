@@ -10,6 +10,7 @@
 } */
 .contain{
     background: #0096FF; 
+    border-radius: 20px;
 }
 p{
     display: inline-block;
