@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ClienteReqResResponse } from './models/cliente-reqres-response';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,6 @@ export class ClientesService {
 
   getClientes() {
     const url = this.baseUrl + "/api/clientes";
-    return this.http.get<ClienteReqResResponse>(url);
+    return this.http.get<any>(url);
   }
 }

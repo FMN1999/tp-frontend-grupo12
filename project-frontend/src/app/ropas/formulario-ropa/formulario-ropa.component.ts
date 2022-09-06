@@ -5,6 +5,8 @@ import { Ropa } from 'src/app/models/ropa.model';
 import { Temporada } from 'src/app/models/temporada.model';
 import { TipoRopa } from 'src/app/models/tipoRopa.model';
 import { RopasService } from 'src/app/ropas.service';
+import { TemporadasService } from 'src/app/temporadas.service';
+import { TiporopasService } from 'src/app/tiporopas.service';
 
 @Component({
   selector: 'app-formulario-ropa',
@@ -23,12 +25,17 @@ export class FormularioRopaComponent implements OnInit {
   temporadaInput:string;
   precioRopaInput:string;
   indiceRopa: String;
+  temporada: Temporada;
+  deshabilitar: boolean;
+  
 
 
   //Inyecto el servicio de Router
   constructor(private router: Router,
               private route: ActivatedRoute, 
-              private ropaService: RopasService) { }
+              private ropaService: RopasService, 
+              private temporadaService: TemporadasService, 
+              private tipoRopaService: TiporopasService) { }
 
   ngOnInit(): void {
 
@@ -41,8 +48,7 @@ export class FormularioRopaComponent implements OnInit {
     if(this.indiceRopa != null){
 
       this.getRopaById(this.indiceRopa)
-      .subscribe( (ropaParam) => this.mapearDeDatos(ropaParam.body) );
-      
+      .then( (ropaParam) => this.mapearDeDatos(ropaParam))
     }
 
 
@@ -51,6 +57,16 @@ export class FormularioRopaComponent implements OnInit {
   //Método para comunicarme con la capa de servicio, y así obtener una ropa mediante su id.
   getRopaById(id:String){
     return this.ropaService.getRopaById(id);
+  }
+
+  //Método para comunicarme con la capa de servicio, y así obtener una temporada mediante su detalle.
+  getTemporadaByDetalle(detalle:string){
+    return this.temporadaService.getTemporadaByDetalle(detalle);
+  }
+
+  //Método para comunicarme con la capa de servicio, y así obtener un tipo de ropa mediante su detalle.
+  getTipoRopaByDetalle(detalle:string){
+    return this.tipoRopaService.getTipoRopaByDetalle(detalle);
   }
 
   //Método para mapear los datos de la entidad 'ropa', a los campos del formulario
@@ -63,9 +79,9 @@ export class FormularioRopaComponent implements OnInit {
     let temporada = new Temporada();
     let tpa = ropa.tipoRopa;
     let tipoRopa = new TipoRopa();
-    temporada._id = tempo['_id'];
-    precioRopa._id = propa['_id'];
-    tipoRopa._id = tpa['_id'];
+    temporada.detalle = tempo['detalle'];
+    precioRopa._id = propa['importe'];
+    tipoRopa._id = tpa['detalle'];
 
     //Mapeo los datos a los campos del formulario
     this.marcaInput = ropa.marca;
@@ -73,9 +89,10 @@ export class FormularioRopaComponent implements OnInit {
     this.talleInput = ropa.talle;
     this.detalleInput = ropa.detalle;
     this.tipoRopaInput = tipoRopa._id;
-    this.temporadaInput = temporada._id;
+    this.temporadaInput = temporada.detalle;
     this.precioRopaInput = precioRopa._id;
   }
+
 
   guardarRopa(){
 
@@ -83,6 +100,7 @@ export class FormularioRopaComponent implements OnInit {
       //'edición'
       if(this.indiceRopa != null){
         let ropa = new Ropa();
+        
         ropa.categoria = this.categoriaInput;
         ropa.detalle = this.detalleInput;
         ropa.marca = this.marcaInput;
@@ -95,14 +113,32 @@ export class FormularioRopaComponent implements OnInit {
         .subscribe((datos) => console.log("Ropa actualizada correctamente: " + datos));
 
       }else{
-        let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput, 
-          this.detalleInput, this.tipoRopaInput, this.temporadaInput, this.precioRopaInput);
-        this.ropaService.agregarRopa(ropa1);
-      }
 
+        let tempoNueva = new Temporada();
+        let tipoRopaNueva = new TipoRopa();
+
+        //Busco la temporada que ingresé en el campo temporada, mediante su detalle
+        this.temporadaService.getTemporadaByDetalle(this.temporadaInput)
+        .then( (tempo) => {
+          tempoNueva = tempo[0];
+        })
+        .catch( error => console.log(error));
+
+        //Busco el tipo de ropa que ingresé en el campo 'tipo de ropa', mediante su detalle
+        this.tipoRopaService.getTipoRopaByDetalle(this.tipoRopaInput)
+        .then( (tipoRopaParam) => {          
+          tipoRopaNueva = tipoRopaParam[0];
+          let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput, 
+            this.detalleInput, tipoRopaNueva._id, tempoNueva._id, this.precioRopaInput);
+            this.ropaService.agregarRopa(ropa1);
+        })
+        .catch(error => console.log(error));
+
+        
+      }
+      
       this.router.navigate(['ropas']);
   }
-
 
   eliminarRopa(){
     //Compruebo si el índice es diferente de nulo

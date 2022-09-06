@@ -1,21 +1,25 @@
 <div>
     <form #f="ngForm" (ngSubmit)="f.form.valid && guardarRopa()">
-        <input type="text" placeholder="Marca" name="marca" id="marca" [(ngModel)]="marcaInput" required>
+        <input type="text" placeholder="Marca" name="marca" id="marca" 
+        [(ngModel)]="marcaInput" required [disabled]="deshabilitar">
         <br>
-        <input type="text" placeholder="Categoría" name="cate" id="cate" [(ngModel)]="categoriaInput" required>
+        <input type="text" placeholder="Categoría" name="cate" id="cate" 
+        [(ngModel)]="categoriaInput" required [disabled]="deshabilitar">
         <br>
-        <input type="text" placeholder="Talle" name="talle" id="talle" [(ngModel)]="talleInput" required>
+        <input type="text" placeholder="Talle" name="talle" id="talle" 
+        [(ngModel)]="talleInput" required [disabled]="deshabilitar">
         <br>
-        <input type="text" placeholder="Detalle" name="detalle" id="detalle" [(ngModel)]="detalleInput" required>
+        <input type="text" placeholder="Detalle" name="detalle" id="detalle" 
+        [(ngModel)]="detalleInput" [disabled]="deshabilitar" required>
         <br>
         <input type="text" placeholder="Tipo de ropa" name="tipoRopa" id="tipoRopa" 
-        [(ngModel)]="tipoRopaInput" required>
+        [(ngModel)]="tipoRopaInput" required [disabled]="deshabilitar">
         <br>
         <input type="text" placeholder="Temporada" name="temporada" id="temporada" 
-        [(ngModel)]="temporadaInput" required>
+        [(ngModel)]="temporadaInput" required [disabled]="deshabilitar">
         <br>
         <input type="text" placeholder="Precio de ropa" name="precioRopa" id="precioRopa" 
-        [(ngModel)]="precioRopaInput" required>
+        [(ngModel)]="precioRopaInput" required [disabled]="deshabilitar">
         <br>
         <button type="submit" style="cursor: pointer;">+</button>
 

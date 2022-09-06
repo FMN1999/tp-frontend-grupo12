@@ -10,7 +10,8 @@ const routes: Routes = [
   {path: '', component: RopasComponent},
   {path: 'ropas', component: RopasComponent}, 
   {path: 'ropas/agregar', component: FormularioRopaComponent},
-  {path: 'ropas/:id', component: FormularioRopaComponent} 
+  {path: 'ropas/editar/:id', component: FormularioRopaComponent}, 
+  {path: 'ropas/borrar/:id', component: FormularioRopaComponent}
 ];
 
 @NgModule({
