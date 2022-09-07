@@ -23,7 +23,7 @@ export class TemporadasService {
     return new Promise( (resolve, reject) => {  
       setTimeout( () => {      
         resolve(tempo)
-      }, 2500)
+      }, 3000)
     }) 
   }
 

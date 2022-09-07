@@ -7,12 +7,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PreciosropaService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClientService: HttpClient) { }
 
-  baseUrl = "http://localhost:3000";
+  baseUrl = "http://localhost:3000/api/";
 
   getPreciosRopa() {
-    const url = this.baseUrl + "/api/preciosRopa";
-    return this.http.get<any>(url);
+    const url = this.baseUrl + "preciosRopa";
+    return this.httpClientService.get<any>(url);
+  }
+
+  getPrecioRopaByImporte = (importe) => {
+    const url = this.baseUrl + `precioRopa/${importe}`;
+    let precioRopa;
+    this.httpClientService.get<any>(url).subscribe((propaParam) => precioRopa = propaParam.body);
+    return new Promise((resolve, reject) => {
+      setTimeout( () => {      
+        resolve(precioRopa)
+      }, 5000)
+    })
   }
 }

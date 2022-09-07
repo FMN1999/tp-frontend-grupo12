@@ -22,7 +22,7 @@ export class TiporopasService {
     return new Promise((resolve, reject) => {
       setTimeout( () => {      
         resolve(tipoRopa)
-      }, 5000)
+      }, 3000)
     })
   }
 
