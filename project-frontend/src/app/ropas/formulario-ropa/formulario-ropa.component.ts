@@ -28,6 +28,7 @@ export class FormularioRopaComponent implements OnInit {
   indiceRopa: String;
   temporada: Temporada;
   deshabilitar: boolean;
+  modoEliminar: number;
   
 
 
@@ -43,36 +44,22 @@ export class FormularioRopaComponent implements OnInit {
 
     //Capturo el id que me viene del formulario de ropas.
     this.indiceRopa = this.route.snapshot.params['id'];
-    
+    this.modoEliminar = +this.route.snapshot.queryParams['modoEliminar'];
     
     //Si el índice es diferente de nulo, entonces quiere decir que estamos en modo 'edicion', ya que se ha 
     //seleccionado un elemento que no se está agregando, sino que ya se encuentra dentro del arreglo.
-    if(this.indiceRopa != null){
 
+    if(this.indiceRopa != null && this.modoEliminar === 1){
+      this.deshabilitar = true;
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
     }
 
-
-  }
-
-  //Método para comunicarme con la capa de servicio, y así obtener una ropa mediante su id.
-  getRopaById(id:String){
-    return this.ropaService.getRopaById(id);
-  }
-
-  //Método para comunicarme con la capa de servicio, y así obtener una temporada mediante su detalle.
-  getTemporadaByDetalle(detalle:string){
-    return this.temporadaService.getTemporadaByDetalle(detalle);
-  }
-
-  //Método para comunicarme con la capa de servicio, y así obtener un tipo de ropa mediante su detalle.
-  getTipoRopaByDetalle(detalle:string){
-    return this.tipoRopaService.getTipoRopaByDetalle(detalle);
-  }
-
-  getPrecioRopaByImporte(importe:string){
-    return this.precioRopaService.getPrecioRopaByImporte(importe);
+    else if(this.indiceRopa != null){
+      this.getRopaById(this.indiceRopa)
+      .then( (ropaParam) => this.mapearDeDatos(ropaParam))
+    }
+    
   }
 
   //Método para mapear los datos de la entidad 'ropa', a los campos del formulario
@@ -99,6 +86,24 @@ export class FormularioRopaComponent implements OnInit {
     this.precioRopaInput = precioRopa._id;
   }
 
+  //Método para comunicarme con la capa de servicio, y así obtener una ropa mediante su id.
+  getRopaById(id:String){
+    return this.ropaService.getRopaById(id);
+  }
+
+  //Método para comunicarme con la capa de servicio, y así obtener una temporada mediante su detalle.
+  getTemporadaByDetalle(detalle:string){
+    return this.temporadaService.getTemporadaByDetalle(detalle);
+  }
+
+  //Método para comunicarme con la capa de servicio, y así obtener un tipo de ropa mediante su detalle.
+  getTipoRopaByDetalle(detalle:string){
+    return this.tipoRopaService.getTipoRopaByDetalle(detalle);
+  }
+
+  getPrecioRopaByImporte(importe:string){
+    return this.precioRopaService.getPrecioRopaByImporte(importe);
+  }
 
   guardarRopa(){
       //Valido que el índice sea distinto de nulo. Si así ocurre, quiere decir que estamos en modo 
