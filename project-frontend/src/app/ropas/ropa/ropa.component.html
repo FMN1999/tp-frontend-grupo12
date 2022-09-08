@@ -21,7 +21,8 @@
                   <td>{{rp.precioRopa}}</td>
                   <td>{{rp._id}}</td>
                 </tr>
-                <a [routerLink]="['/ropas', indice]">Editar</a>
+                <a [routerLink]="['/ropas/editar', indice]">Editar</a>
+                <a [routerLink]="['/ropas/borrar', indice]" [queryParams]="{modoEliminar:'1'}">Eliminar</a>
         </thead>
     </table>
 </div>

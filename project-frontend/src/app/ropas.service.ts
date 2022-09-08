@@ -18,10 +18,16 @@ export class RopasService {
     return this.httpClientService.get<any>(url);
   }
   
-  //Funcionando correctamente
-  getRopaById(id:String){
+
+  getRopaById = (id) => {
     const url = this.baseURL + `ropas/${id}`;
-    return this.httpClientService.get<any>(url);
+    let ropa;
+    this.httpClientService.get<any>(url).subscribe((ropaParam) => ropa = ropaParam.body);
+    return new Promise((resolve, reject) => {
+      setTimeout( () => {
+        resolve(ropa)
+      }, 2500)
+    })
   }
 
 <<<<<<< HEAD
