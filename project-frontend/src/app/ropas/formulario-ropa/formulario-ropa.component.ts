@@ -56,6 +56,7 @@ export class FormularioRopaComponent implements OnInit {
     }
 
     else if(this.indiceRopa != null){
+      document.getElementById('btnAgregar').innerHTML = "Editar";
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
     }
