@@ -1,26 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TipoRopaReqResResponse } from './models/tiporopa-reqres-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TiporopasService {
 
-<<<<<<< HEAD
-  readonly baseURL = "http://localhost:3000/api/";
-
-  constructor(private httpClientService: HttpClient) { }
-
-  getTipoRopas() {
-    const url = this.baseURL + "tiposRopa";
-=======
   constructor(private httpClientService: HttpClient) { }
 
   baseUrl = "http://localhost:3000/api/";
 
   getTipoRopas() {
     const url = this.baseUrl + "tiposRopa";
->>>>>>> branch-guille
     return this.httpClientService.get<any>(url);
   }
 
@@ -31,7 +23,7 @@ export class TiporopasService {
     return new Promise((resolve, reject) => {
       setTimeout( () => {      
         resolve(tipoRopa)
-      }, 3000)
+      }, 2500)
     })
   }
 

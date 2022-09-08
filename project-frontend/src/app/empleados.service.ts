@@ -11,12 +11,7 @@ export class EmpleadosService {
   constructor(private httpClientService: HttpClient) { }
 
   getEmpleados() {
-<<<<<<< HEAD
     const url = this.baseURL + "empleados";
     return this.httpClientService.get<any>(url);
-=======
-    const url = this.baseUrl + "/api/empleados";
-    return this.http.get<any>(url);
->>>>>>> branch-guille
   }
 }

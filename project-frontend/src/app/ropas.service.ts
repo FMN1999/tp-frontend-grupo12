@@ -30,24 +30,6 @@ export class RopasService {
     })
   }
 
-<<<<<<< HEAD
-  /*
-  //Todavía no está codificado
-  updateRopa(indiceRopa:number, ropa:Ropa){
-    const url = this.baseURL + `ropas/${ropa._id}`;
-    let ropa1 = this.ropas[indiceRopa] as Ropa;
-
-    ropa1.categoria = ropa.categoria;
-    ropa1.detalle = ropa.detalle;
-    ropa1.marca = ropa.marca;
-    ropa1.talle = ropa.talle;
-    ropa1.temporada = ropa.temporada;
-    ropa1.tipoRopa = ropa.tipoRopa;
-
-    this.httpClientService.put(url, ropa1)
-    .subscribe( response => console.log("Ropa actualizada"), 
-    error => console.log("Error al actualizar") );
-=======
   //Funcionando correctamente
   eliminarRopa(id:String){
     const url = this.baseURL + `ropas/${id}`;
@@ -58,7 +40,6 @@ export class RopasService {
   updateRopa(id:String, ropa:Ropa){
     const url = this.baseURL + `ropas/${id}`;
     return this.httpClientService.put<any>(url, ropa);
->>>>>>> branch-guille
   }
 
 
@@ -69,5 +50,5 @@ export class RopasService {
     .subscribe(response => console.log("Ropa agregada correctamente"), 
     error => console.log("Error al agregar" + error));
   }
-*/
+
 }

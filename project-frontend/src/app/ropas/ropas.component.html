@@ -1,15 +1,12 @@
-<h1>Listado de ropas</h1>
-<div *ngFor="let ropa of ropas.body" class="column">
-  <p>Marca: {{ropa.marca}}</p>
-  <hr>
-  <p>Categoria: {{ropa.categoria}}</p> 
-  <hr>     
-  <p>Detalle: {{ropa.detalle}}</p>
-  <hr>
-  <p>Talle: {{ropa.talle}}</p>  
-  <button style="cursor: pointer;" class="boton" (click)="rp=getRopaById(ropa._id)">Editar</button>
-</div>
+<!-- Falta lo de agregar ropa -->
 
+
+<h1>LISTADO DE ROPAS</h1>
+
+<app-ropa *ngFor="let rop of ropas.body"
+[ropa] = "rop"
+[indice] = "rop._id">
+</app-ropa>
 
 <!-- <div *ngIf="rp!==null">
   <app-ropa

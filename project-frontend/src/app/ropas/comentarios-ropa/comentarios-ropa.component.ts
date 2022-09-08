@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ComentarioRopa } from '../../models/comentario-ropa-model';
 import { ComentariosRopaService } from '../../comentarios-ropa.service';
-import mongoose from 'mongoose';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-comentarios-ropa',
@@ -12,15 +12,15 @@ export class ComentariosRopaComponent implements OnInit {
 
   
   detalle : string;
-  idRopa : mongoose.Schema.Types.ObjectId;
   nombreUsuario : string;
   apellidoUsuario : string;
   fecha : string;
-  
+  idRopa: String;
 
-  constructor(private comentariosRopaService: ComentariosRopaService) { }
+  constructor(private comentariosRopaService: ComentariosRopaService, private router:Router, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
+    this.idRopa = this.route.snapshot.params['id'];
   }
 
   guardarComentario(){

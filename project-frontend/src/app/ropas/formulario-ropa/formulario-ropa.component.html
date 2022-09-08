@@ -1,43 +1,48 @@
-<<<<<<< HEAD
-<!-- <div>
-     <form #f="ngForm" (ngSubmit)="f.form.valid && guardarRopa()"> 
-        <input type="text" placeholder="Marca" name="marca" id="marca" [(ngModel)]="marcaInput" required>
-=======
-<div>
-    <form #f="ngForm" (ngSubmit)="f.form.valid && guardarRopa()">
-        <input type="text" placeholder="Marca" name="marca" id="marca" 
-        [(ngModel)]="marcaInput" required [disabled]="deshabilitar">
->>>>>>> branch-guille
+<br>
+<h1>ROPAS</h1>
+<br><br><br>
+<div class="container">
+    <h2>FORMULARIO</h2>
+    <br><br><br>
+    <form #f="ngForm" (ngSubmit)="f.form.valid && guardarRopa()" class="contain">
+        <label>Marca</label>
         <br>
-        <input type="text" placeholder="Categoría" name="cate" id="cate" 
-        [(ngModel)]="categoriaInput" required [disabled]="deshabilitar">
-        <br>
-        <input type="text" placeholder="Talle" name="talle" id="talle" 
-        [(ngModel)]="talleInput" required [disabled]="deshabilitar">
-        <br>
-        <input type="text" placeholder="Detalle" name="detalle" id="detalle" 
-        [(ngModel)]="detalleInput" [disabled]="deshabilitar" required>
-        <br>
-        <input type="text" placeholder="Tipo de ropa" name="tipoRopa" id="tipoRopa" 
-        [(ngModel)]="tipoRopaInput" required [disabled]="deshabilitar">
-        <br>
-        <input type="text" placeholder="Temporada" name="temporada" id="temporada" 
-        [(ngModel)]="temporadaInput" required [disabled]="deshabilitar">
-        <br>
-        <input type="text" placeholder="Precio de ropa" name="precioRopa" id="precioRopa" 
-        [(ngModel)]="precioRopaInput" required [disabled]="deshabilitar">
-        <br>
-        <button type="submit" style="cursor: pointer;">+</button>
+        <input type="text" name="marca" id="marca" [(ngModel)]="marcaInput" required>
+        <br><br>
 
-<<<<<<< HEAD
-        Botón de ELIMINAR. Solo se mostrará en modo 'edición', es decir, 
-            si el índice del elemento NO es nulo.
-        <button type="submit" style="cursor: pointer;" *ngIf="indiceRopa != null">-</button>
-=======
+        <label>Categoría</label>
+        <br>
+        <input type="text"  name="cate" id="cate" [(ngModel)]="categoriaInput" required>
+        <br><br>
+
+        <label>Talle</label>
+        <br>
+        <input type="text" name="talle" id="talle" [(ngModel)]="talleInput" required>
+        <br><br>
+
+        <label>Detalle</label>
+        <br>
+        <input type="text" name="detalle" id="detalle" [(ngModel)]="detalleInput" required>
+        <br><br>
+
+        <label>Tipo de ropa</label>
+        <br>
+        <input type="text" name="tipoRopa" id="tipoRopa" [(ngModel)]="tipoRopaInput" required>
+        <br><br>
+
+        <label>Temporada</label>
+        <br>
+        <input type="text" name="temporada" id="temporada" 
+        [(ngModel)]="temporadaInput" required>
+        <br><br>
+        <label>Precio de ropa</label>
+        <br>
+        <input type="text" name="precioRopa" id="precioRopa" [(ngModel)]="precioRopaInput" required>
+        <br><br><br><br>
+        <button type="submit" style="cursor: pointer;" class="btn-80">Agregar</button>
+        <br><br>
         <!--Botón de ELIMINAR. Solo se mostrará en modo 'edición', es decir, 
             si el índice del elemento NO es nulo.-->
-        <button type="submit" (click)="eliminarRopa()"  style="cursor: pointer;" 
-        *ngIf="indiceRopa != null">-</button>
->>>>>>> branch-guille
+        <button type="submit" (click)="eliminarRopa()"  style="cursor: pointer;" *ngIf="indiceRopa != null" class="btn-80">Eliminar</button>
     </form>
-</div> -->
+</div>

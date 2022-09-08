@@ -1,27 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-<<<<<<< HEAD
+import { PrecioRopa } from '../../models/precioRopa.model';
 import { Ropa } from '../../models/ropa.model';
+import { Temporada } from '../../models/temporada.model';
+import { TipoRopa } from '../../models/tipoRopa.model';
 import { RopasService } from '../../ropas.service';
-=======
-import { PrecioRopa } from 'src/app/models/precioRopa.model';
-import { Ropa } from 'src/app/models/ropa.model';
-import { Temporada } from 'src/app/models/temporada.model';
-import { TipoRopa } from 'src/app/models/tipoRopa.model';
-import { PreciosropaService } from 'src/app/preciosropa.service';
-import { RopasService } from 'src/app/ropas.service';
-<<<<<<< HEAD
->>>>>>> branch-guille
-=======
-import { TemporadasService } from 'src/app/temporadas.service';
-import { TiporopasService } from 'src/app/tiporopas.service';
->>>>>>> branch-guille
+import { TemporadasService } from '../../temporadas.service';
+import { TiporopasService } from '../../tiporopas.service';
+import {PreciosropaService} from '../../preciosropa.service';
 
 @Component({
   selector: 'app-formulario-ropa',
   templateUrl: './formulario-ropa.component.html',
   styleUrls: ['./formulario-ropa.component.css']
 })
+
 
 export class FormularioRopaComponent implements OnInit {
 
@@ -33,57 +26,25 @@ export class FormularioRopaComponent implements OnInit {
   temporadaInput:string;
   precioRopaInput:string;
   indiceRopa: String;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> branch-guille
-=======
   temporada: Temporada;
   deshabilitar: boolean;
   modoEliminar: number;
   
->>>>>>> branch-guille
 
 
   //Inyecto el servicio de Router
   constructor(private router: Router,
-<<<<<<< HEAD
-              private route: ActivatedRoute,
-              private ropaService: RopasService) { }
-=======
               private route: ActivatedRoute, 
               private ropaService: RopasService, 
               private temporadaService: TemporadasService, 
               private tipoRopaService: TiporopasService, 
               private precioRopaService: PreciosropaService) { }
->>>>>>> branch-guille
 
   ngOnInit(): void {
 
     //Capturo el id que me viene del formulario de ropas.
     this.indiceRopa = this.route.snapshot.params['id'];
-<<<<<<< HEAD
-<<<<<<< HEAD
-    console.log("Indice de ropa: " + this.indiceRopa);
-    //Si el índice es diferente de nulo, entonces quiere decir que estamos en modo 'edicion', ya que se ha
-    //seleccionado un elemento que no se está agregando, sino que ya se encuentra dentro del arreglo.
-    if(this.indiceRopa != null){
-
-      //Busco la ropa en el array de ropas
-      let ropa = this.ropaService.getRopaById(this.indiceRopa);
-
-      /*
-      console.log("Datos ropa: ");
-      console.log("-------------------------");
-      console.log("Id de ropa: " + ropa._id);
-      console.log("Marca de ropa: " + ropa.marca);
-
-=======
-    
-=======
     this.modoEliminar = +this.route.snapshot.queryParams['modoEliminar'];
->>>>>>> branch-guille
     
     //Si el índice es diferente de nulo, entonces quiere decir que estamos en modo 'edicion', ya que se ha 
     //seleccionado un elemento que no se está agregando, sino que ya se encuentra dentro del arreglo.
@@ -93,7 +54,6 @@ export class FormularioRopaComponent implements OnInit {
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
     }
->>>>>>> branch-guille
 
     else if(this.indiceRopa != null){
       this.getRopaById(this.indiceRopa)
@@ -126,17 +86,6 @@ export class FormularioRopaComponent implements OnInit {
     this.precioRopaInput = precioRopa._id;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //Creo el objeto de Ropa
-    let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput,
-      this.detalleInput, this.tipoRopaInput, this.temporadaInput, this.precioRopaInput);
-=======
-  guardarRopa(){
->>>>>>> branch-guille
-
-      //Valido que el índice sea distinto de nulo. Si así ocurre, quiere decir que estamos en modo
-=======
   //Método para comunicarme con la capa de servicio, y así obtener una ropa mediante su id.
   getRopaById(id:String){
     return this.ropaService.getRopaById(id);
@@ -158,7 +107,6 @@ export class FormularioRopaComponent implements OnInit {
 
   guardarRopa(){
       //Valido que el índice sea distinto de nulo. Si así ocurre, quiere decir que estamos en modo 
->>>>>>> branch-guille
       //'edición'
 
       let tempoNueva = new Temporada();
@@ -232,9 +180,6 @@ export class FormularioRopaComponent implements OnInit {
       
       this.router.navigate(['ropas']);
   }
-<<<<<<< HEAD
-*/
-=======
 
   eliminarRopa(){
     //Compruebo si el índice es diferente de nulo
@@ -245,7 +190,4 @@ export class FormularioRopaComponent implements OnInit {
     this.router.navigate(['ropas']);
   }
 
->>>>>>> branch-guille
 }
-
-}}
