@@ -9,7 +9,7 @@
     display:block;
 } */
 .contain{
-    background: #0096FF; 
+    background: #0096FF;
 }
 p{
     display: inline-block;
@@ -17,5 +17,16 @@ p{
 }
 section{
     display: flex;
+}
+
+.marca_ropa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gama{
+    font-family: fantasy;
+    color: aliceblue;
 }
 

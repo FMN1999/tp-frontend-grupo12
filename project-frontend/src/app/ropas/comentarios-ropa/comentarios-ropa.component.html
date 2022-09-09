@@ -1,10 +1,11 @@
 <br>
 <h1>COMENTARIOS DE ROPA</h1>
 <br><br><br>
-<div class="container">
+<div class="conteiner">
     <h2>FORMULARIO</h2>
-    <br><br><br><br><br><br>
+    <br><br>
     <form #f="ngForm" (ngSubmit)="guardarComentario()" class="form">
+        <div class="conteinerJr">
             <label>Detalle</label>
             <br>
             <input type="text" id="detalle" name="detalle" [(ngModel)]="detalle" required>
@@ -21,9 +22,12 @@
             <br>
             <input type="text" id="fecha" name="fecha" [(ngModel)]="fecha" required>
             <br><br><br><br>
-        <button type="submit" class="btn-80"><span>Guardar</span></button>
+            <button type="submit" class="btn-80"><span>Guardar</span></button>
+        </div>
     </form>
+    <br><br>
     
 </div> 
+<br><br><br>
 
 

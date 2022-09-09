@@ -1,10 +1,11 @@
 <br>
 <h1>ROPAS</h1>
 <br><br><br>
-<div class="container">
+<div class="conteiner">
     <h2>FORMULARIO</h2>
     <br><br><br>
     <form #f="ngForm" (ngSubmit)="f.form.valid && guardarRopa()" class="contain">
+        <div class="conteinerJr">
         <label>Marca</label>
         <br>
         <input type="text" name="marca" id="marca" [(ngModel)]="marcaInput" required>
@@ -44,5 +45,8 @@
         <!--Botón de ELIMINAR. Solo se mostrará en modo 'edición', es decir, 
             si el índice del elemento NO es nulo.-->
         <button type="submit" (click)="eliminarRopa()"  style="cursor: pointer;" *ngIf="indiceRopa != null" class="btn-80">Eliminar</button>
+        </div>
     </form>
+    <br><br>
 </div>
+<br><br><br>
