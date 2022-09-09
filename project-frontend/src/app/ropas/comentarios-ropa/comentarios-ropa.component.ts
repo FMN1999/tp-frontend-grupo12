@@ -26,7 +26,7 @@ export class ComentariosRopaComponent implements OnInit {
   guardarComentario(){
     let comentario = new ComentarioRopa(this.detalle, this.idRopa, this.nombreUsuario, this.apellidoUsuario, this.fecha);
     this.comentariosRopaService.postComentarioRopa(comentario).subscribe( data =>{
-    console.log(data)}
+      this.router.navigate(['']);}
     );
   }
 
