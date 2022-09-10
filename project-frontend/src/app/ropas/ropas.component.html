@@ -3,6 +3,11 @@
 
 <h1>LISTADO DE ROPAS</h1>
 <hr>
+<br>
+<div>
+  <input id="searchbox" type="text" placeholder="Search.." name= "search" [(ngModel)]= "search">
+  <button type="submit" [routerLink]="['/ropasSearch', search]">Buscar</button>
+</div>
 <app-ropa *ngFor="let rop of ropas.body"
 [ropa] = "rop"
 [indice] = "rop._id">

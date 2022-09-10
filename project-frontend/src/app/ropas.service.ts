@@ -14,10 +14,10 @@ export class RopasService {
 
   getRopas() {
     const url = this.baseURL + "ropas";
-    this.ropas = this.httpClientService.get(url); 
+    this.ropas = this.httpClientService.get(url);
     return this.httpClientService.get<any>(url);
   }
-  
+
 
   getRopaById = (id) => {
     const url = this.baseURL + `ropas/${id}`;
@@ -47,8 +47,13 @@ export class RopasService {
   agregarRopa(ropa:Ropa){
     const url = this.baseURL + "ropas";
     this.httpClientService.post(url, ropa)
-    .subscribe(response => console.log("Ropa agregada correctamente"), 
+    .subscribe(response => console.log("Ropa agregada correctamente"),
     error => console.log("Error al agregar" + error));
   }
 
+  buscar = (texto_busqueda) =>{
+    const url = this.baseURL + `ropasSearch/${texto_busqueda}`;
+    this.ropas = this.httpClientService.get(url);
+    return this.httpClientService.get<any>(url);
+  }
 }

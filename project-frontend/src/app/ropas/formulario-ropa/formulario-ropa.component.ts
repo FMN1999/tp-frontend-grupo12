@@ -29,15 +29,15 @@ export class FormularioRopaComponent implements OnInit {
   temporada: Temporada;
   deshabilitar: boolean;
   modoEliminar: number;
-  
+
 
 
   //Inyecto el servicio de Router
   constructor(private router: Router,
-              private route: ActivatedRoute, 
-              private ropaService: RopasService, 
-              private temporadaService: TemporadasService, 
-              private tipoRopaService: TiporopasService, 
+              private route: ActivatedRoute,
+              private ropaService: RopasService,
+              private temporadaService: TemporadasService,
+              private tipoRopaService: TiporopasService,
               private precioRopaService: PreciosropaService) { }
 
   ngOnInit(): void {
@@ -45,8 +45,8 @@ export class FormularioRopaComponent implements OnInit {
     //Capturo el id que me viene del formulario de ropas.
     this.indiceRopa = this.route.snapshot.params['id'];
     this.modoEliminar = +this.route.snapshot.queryParams['modoEliminar'];
-    
-    //Si el índice es diferente de nulo, entonces quiere decir que estamos en modo 'edicion', ya que se ha 
+
+    //Si el índice es diferente de nulo, entonces quiere decir que estamos en modo 'edicion', ya que se ha
     //seleccionado un elemento que no se está agregando, sino que ya se encuentra dentro del arreglo.
 
     if(this.indiceRopa != null && this.modoEliminar === 1){
@@ -60,7 +60,7 @@ export class FormularioRopaComponent implements OnInit {
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
     }
-    
+
   }
 
   //Método para mapear los datos de la entidad 'ropa', a los campos del formulario
@@ -107,7 +107,7 @@ export class FormularioRopaComponent implements OnInit {
   }
 
   guardarRopa(){
-      //Valido que el índice sea distinto de nulo. Si así ocurre, quiere decir que estamos en modo 
+      //Valido que el índice sea distinto de nulo. Si así ocurre, quiere decir que estamos en modo
       //'edición'
 
       let tempoNueva = new Temporada();
@@ -116,12 +116,12 @@ export class FormularioRopaComponent implements OnInit {
 
       if(this.indiceRopa != null){
         let ropa = new Ropa();
-        
+
         ropa.categoria = this.categoriaInput;
         ropa.detalle = this.detalleInput;
         ropa.marca = this.marcaInput;
         ropa.talle = this.talleInput;
-        
+
         //Busco la temporada que ingresé en el campo temporada, mediante su detalle
         this.getTemporadaByDetalle(this.temporadaInput)
         .then( (tempo) => {
@@ -132,7 +132,7 @@ export class FormularioRopaComponent implements OnInit {
 
         //Busco el tipo de ropa que ingresé en el campo 'tipo de ropa', mediante su detalle
         this.getTipoRopaByDetalle(this.tipoRopaInput)
-        .then( (tipoRopaParam) => {          
+        .then( (tipoRopaParam) => {
           tipoRopaNueva = tipoRopaParam[0];
           ropa.tipoRopa = tipoRopaNueva._id;
         })
@@ -150,7 +150,7 @@ export class FormularioRopaComponent implements OnInit {
 
       }else{
 
-        
+
 
         //Busco la temporada que ingresé en el campo temporada, mediante su detalle
         this.getTemporadaByDetalle(this.temporadaInput)
@@ -161,7 +161,7 @@ export class FormularioRopaComponent implements OnInit {
 
         //Busco el tipo de ropa que ingresé en el campo 'tipo de ropa', mediante su detalle
         this.getTipoRopaByDetalle(this.tipoRopaInput)
-        .then( (tipoRopaParam) => {          
+        .then( (tipoRopaParam) => {
           tipoRopaNueva = tipoRopaParam[0];
         })
         .catch(error => console.log(error));
@@ -170,15 +170,15 @@ export class FormularioRopaComponent implements OnInit {
         this.getPrecioRopaByImporte(this.precioRopaInput)
         .then( (proParam) => {
           precioRopaNueva = proParam[0];
-          console.log(precioRopaNueva.fechaDesde);  
-          let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput, 
+          console.log(precioRopaNueva.fechaDesde);
+          let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput,
             this.detalleInput, tipoRopaNueva._id, tempoNueva._id, precioRopaNueva._id);
             this.ropaService.agregarRopa(ropa1);
         })
         .catch(error => console.log(error));
 
       }
-      
+
       this.router.navigate(['ropas']);
   }
 
@@ -191,4 +191,7 @@ export class FormularioRopaComponent implements OnInit {
     this.router.navigate(['ropas']);
   }
 
+  buscar(texto_busqueda:String){
+    this.ropaService.buscar(texto_busqueda);
+  }
 }
