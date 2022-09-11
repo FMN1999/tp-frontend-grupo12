@@ -24,15 +24,15 @@ export class RopasComponent implements OnInit {
     this.router.navigate(['ropas/agregar']);
   }
 
-  buscar(texto_busqueda){
-    this.ropaService.buscar(texto_busqueda).subscribe( response => this.ropas = response);
+  buscar(){
+    this.ropaService.buscar(this.search).subscribe( response => this.ropas = response);
   }
 
   ngOnInit(): void{
     if (this.search === null){
       this.loadRopas()
     } else{
-      this.buscar(this.search);
+      this.buscar();
     }
   }
 }
