@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: 'ropas/agregar', component: FormularioRopaComponent},
   {path: 'ropas/:id', component: FormularioRopaComponent},
   {path: 'agregarComentario/:id', component: ComentariosRopaComponent},
+  {path: 'verComentarios/:id', component: ComentariosRopaComponent},
   {path: 'ropasSearch/:texto_busqueda', component: RopasComponent}
 ];
 
