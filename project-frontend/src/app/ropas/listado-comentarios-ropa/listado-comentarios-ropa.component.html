@@ -1,1 +1,9 @@
-<p>listado-comentarios-ropa works!</p>
+<div *ngFor="let c of comentarios.body">
+  <p>Detalle: {{c.detalle}}</p>
+  <hr>
+  <p>Usuario: {{c.nombreUsuario + c.apellidoUsuario}}</p>
+  <hr>
+  <p>Fecha: {{c.fecha}}</p>
+  <hr>
+  <br>
+</div>

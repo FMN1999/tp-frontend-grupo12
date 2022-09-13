@@ -1,17 +1,17 @@
 <div class="column col">
   <p>Marca: {{ropa.marca}}</p>
   <hr>
-  <p>Categoria: {{ropa.categoria}}</p> 
-  <hr>     
+  <p>Categoria: {{ropa.categoria}}</p>
+  <hr>
   <p>Detalle: {{ropa.detalle}}</p>
   <hr>
-  <p>Talle: {{ropa.talle}}</p>  
+  <p>Talle: {{ropa.talle}}</p>
   <br>
   <a [routerLink]="['/ropas', indice]">Editar</a>
   <br>
   <a [routerLink]="['/agregarComentario', indice]">Agregar comentario</a>
   <br>
-  <a [routerLink]="['/']"></a>
+  <a [routerLink]="['/agregarComentario', indice]">Comentarios</a>
 </div>
 
 
