@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69c7de33-bad9-46fe-aa0b-418ed44fcb1a" name="Changes" comment="busqueda completada, arreglar el frontend cuando hace la búsqueda">
+    <list default="true" id="69c7de33-bad9-46fe-aa0b-418ed44fcb1a" name="Changes" comment="se muestran los comentarios sin problemas, agregar diseño">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/comentarios-ropa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/comentarios-ropa.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/comentarios-ropa/comentarios-ropa.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/comentarios-ropa/comentarios-ropa.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/comentarios-ropa/comentarios-ropa.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/comentarios-ropa/comentarios-ropa.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/listado-comentarios-ropa/listado-comentarios-ropa.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/listado-comentarios-ropa/listado-comentarios-ropa.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/listado-comentarios-ropa/listado-comentarios-ropa.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/listado-comentarios-ropa/listado-comentarios-ropa.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/ropa/ropa.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/ropa/ropa.component.html" afterDir="false" />
@@ -90,7 +93,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="agregado metodo y html de busqueda" />
-    <option name="LAST_COMMIT_MESSAGE" value="agregado metodo y html de busqueda" />
+    <MESSAGE value="se muestran los comentarios sin problemas, agregar diseño" />
+    <option name="LAST_COMMIT_MESSAGE" value="se muestran los comentarios sin problemas, agregar diseño" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

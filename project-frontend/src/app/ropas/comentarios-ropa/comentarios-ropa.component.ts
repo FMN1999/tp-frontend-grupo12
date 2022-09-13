@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ComentarioRopa } from '../../models/comentario-ropa-model';
 import { ComentariosRopaService } from '../../comentarios-ropa.service';
 import {Router, ActivatedRoute} from '@angular/router';
+import {Ropa} from "../../models/ropa.model";
 
 @Component({
   selector: 'app-comentarios-ropa',
@@ -10,7 +11,6 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class ComentariosRopaComponent implements OnInit {
 
-  
   detalle : string;
   nombreUsuario : string;
   apellidoUsuario : string;

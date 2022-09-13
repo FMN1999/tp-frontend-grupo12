@@ -1,4 +1,4 @@
-import { Component, Injectable,OnInit } from '@angular/core';
+import {Component, Injectable, Input, OnInit} from '@angular/core';
 import{ComentarioRopa} from "../../models/comentario-ropa-model";
 import { ComentariosRopaService } from '../../comentarios-ropa.service';
 import {Router, ActivatedRoute} from '@angular/router';
@@ -11,19 +11,18 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class ListadoComentariosRopaComponent implements OnInit {
 
-  idRopa: String;
+  @Input() id_ropa: String;
+  comentarios:any= [];
 
   constructor(private comentariosRopaService: ComentariosRopaService, private router:Router, private route: ActivatedRoute,) { }
 
-  comentarios:any= [];
 
   ngOnInit(): void {
-    this.idRopa = this.route.snapshot.params['id'];
-    this.listarComentarios(this.idRopa);
+    this.listarComentarios(this.id_ropa);
   }
 
   listarComentarios(id){
-    this.comentarios = this.comentariosRopaService.getComentariosById(id) as ComentarioRopa[]
+    this.comentariosRopaService.getComentariosById(id).subscribe( response => this.comentarios = response)
   }
 
 }

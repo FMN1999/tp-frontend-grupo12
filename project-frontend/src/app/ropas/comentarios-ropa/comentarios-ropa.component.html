@@ -1,7 +1,7 @@
 <br>
 <h1>COMENTARIOS DE ROPA</h1>
 <br><br><br>
-<app-listado-comentarios-ropa>
+<app-listado-comentarios-ropa [id_ropa] = "this.idRopa">
 
 </app-listado-comentarios-ropa>
 
@@ -26,7 +26,7 @@
             <br>
             <input type="text" id="fecha" name="fecha" [(ngModel)]="fecha" required>
             <br><br><br><br>
-            <button type="submit" (click)="this.guardarComentario()" class="btn-80"><span>Guardar</span></button>
+            <button type="submit" class="btn-80"><span>Guardar</span></button>
         </div>
     </form>
     <br><br>
