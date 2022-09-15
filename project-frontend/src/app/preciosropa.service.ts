@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { PrecioRopaReqResResponse } from './models/precioropa-reqres-response';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class PreciosropaService {
     return new Promise((resolve, reject) => {
       setTimeout( () => {      
         resolve(precioRopa)
-      }, 5000)
+      }, 2500)
     })
   }
 }

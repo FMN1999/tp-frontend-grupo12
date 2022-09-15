@@ -1,30 +1,17 @@
-<div>
-    <table>
-        <thead>
-                <th>Marca</th><td>{{ropa.marca}}</td>
-                <tr>
-                    <th>Categoría</th><td>{{ropa.categoria}}</td>
-                </tr>
-                <th>Talle</th><td>{{ropa.talle}}</td>
-                <tr>
-                    <th>Detalle</th><td>{{ropa.detalle}}</td>
-                </tr>
-                <tr>
-                    <th>Tipo de ropa</th><td>{{ropa.tipoRopa|json}}</td>
-                </tr>
-                <tr>
-                    <th>Temporada</th><td>{{ropa.temporada|json}}</td>
-                </tr>
-                <tr>
-                    <th>Precio de ropa</th><td>{{ropa.precioRopa|json}}</td>
-                </tr>
-                <tr>
-                    <th>Id</th><td>{{ropa._id}}</td>
-                </tr>
-                <a [routerLink]="['/ropas/editar', indice]">Editar</a>
-                <a [routerLink]="['/ropas/borrar', indice]" [queryParams]="{modoEliminar:'1'}">Eliminar</a>
-        </thead>
-    </table>
+<div class="column col">
+  <p>Marca: {{ropa.marca}}</p>
+  <hr>
+  <p>Categoria: {{ropa.categoria}}</p>
+  <hr>
+  <p>Detalle: {{ropa.detalle}}</p>
+  <hr>
+  <p>Talle: {{ropa.talle}}</p>
+  <br>
+  <a [routerLink]="['/ropas', indice]">Editar</a>
+  <br>
+  <a [routerLink]="['/comentariosropa', indice]">Agregar comentario</a>
+  <br>
+  <a [routerLink]="['/verComentarios', indice]">Ver Comentarios</a>
 </div>
 
 

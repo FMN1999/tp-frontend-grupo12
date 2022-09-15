@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TemporadaReqResResponse } from './models/temporada-reqres-response';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class TemporadasService {
     return new Promise( (resolve, reject) => {  
       setTimeout( () => {      
         resolve(tempo)
-      }, 3000)
+      }, 2500)
     }) 
   }
 

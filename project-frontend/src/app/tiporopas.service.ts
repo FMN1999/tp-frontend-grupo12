@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TipoRopaReqResResponse } from './models/tiporopa-reqres-response';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class TiporopasService {
     return new Promise((resolve, reject) => {
       setTimeout( () => {      
         resolve(tipoRopa)
-      }, 3000)
+      }, 2500)
     })
   }
 

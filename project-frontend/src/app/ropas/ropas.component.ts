@@ -1,5 +1,4 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Ropa } from '../models/ropa.model';
 import { RopasService } from '../ropas.service';
 import { Router } from '@angular/router';
 
@@ -12,10 +11,11 @@ import { Router } from '@angular/router';
 export class RopasComponent implements OnInit {
 
   ropas:any= [];
-  constructor(private ropaService: RopasService, 
+  search:String = null;
+  constructor(private ropaService: RopasService,
               private router: Router) {}
 
-  
+
   loadRopas(){
     this.ropaService.getRopas().subscribe(response => this.ropas = response);
   }
@@ -24,10 +24,15 @@ export class RopasComponent implements OnInit {
     this.router.navigate(['ropas/agregar']);
   }
 
-  
-
-  ngOnInit(): void{
-    this.loadRopas();
+  buscar(){
+    this.ropaService.buscar(this.search).subscribe( response => this.ropas = response);
   }
 
+  ngOnInit(): void{
+    if (this.search === null){
+      this.loadRopas()
+    } else{
+      this.buscar();
+    }
+  }
 }

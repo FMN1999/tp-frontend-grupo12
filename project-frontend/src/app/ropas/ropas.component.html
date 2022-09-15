@@ -1,12 +1,23 @@
-<!--Este componente contendra la lista a iterar de las ropas, el cual contendrá un componente 
-hijo denominado 'ropa', que se encargará de mostrar los atributos del modelo de ropa-->
+<!-- Falta lo de agregar ropa -->
 
-<div style="text-align: center">
-  <button style="cursor: pointer;" (click)="agregar()">+</button>
+
+<h1>LISTADO DE ROPAS</h1>
+<hr>
+<br>
+<div class="container">
+  <input id="searchbox" type="text" placeholder="Search.." name= "search" [(ngModel)]= "search" (input)="this.buscar()">
+  <!-- <button type="submit" [routerLink]="['/ropasSearch', search]"> Buscar</button> -->
 </div>
-
-
 <app-ropa *ngFor="let rop of ropas.body"
 [ropa] = "rop"
 [indice] = "rop._id">
 </app-ropa>
+
+<!-- <div *ngIf="rp!==null">
+  <app-ropa
+    [rp] = "rp"
+    [indice] = "rp._id">
+  </app-ropa>
+</div> -->
+
+

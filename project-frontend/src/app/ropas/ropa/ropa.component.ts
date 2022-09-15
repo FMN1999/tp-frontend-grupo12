@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Ropa } from 'src/app/models/ropa.model';
+import { Ropa } from '../../models/ropa.model';
 
 @Component({
   selector: 'app-ropa',
