@@ -1,6 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { RopasService } from '../ropas.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Injectable()
 @Component({
@@ -10,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class RopasComponent implements OnInit {
 
+
+
+  suscripcion:Subscription;
   ropas:any= [];
   search:String = null;
   constructor(private ropaService: RopasService,
@@ -20,17 +24,16 @@ export class RopasComponent implements OnInit {
     this.ropaService.getRopas().subscribe(response => this.ropas = response);
   }
 
-  agregar(){
-    this.router.navigate(['ropas/agregar']);
-  }
-
   buscar(){
     this.ropaService.buscar(this.search).subscribe( response => this.ropas = response);
   }
 
   ngOnInit(): void{
-    if (this.search === null){
-      this.loadRopas()
+    if (this.search == null){
+      this.loadRopas();
+      this.suscripcion = this.ropaService.refresh$.subscribe(() => {
+        this.loadRopas();
+      })
     } else{
       this.buscar();
     }

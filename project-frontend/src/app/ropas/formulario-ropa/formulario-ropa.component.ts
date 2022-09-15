@@ -148,9 +148,9 @@ export class FormularioRopaComponent implements OnInit {
         })
         .catch(error => console.log(error));
 
-      }else{
-
-
+      }
+      
+      else{
 
         //Busco la temporada que ingresé en el campo temporada, mediante su detalle
         this.getTemporadaByDetalle(this.temporadaInput)
@@ -174,12 +174,12 @@ export class FormularioRopaComponent implements OnInit {
           let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput,
             this.detalleInput, tipoRopaNueva._id, tempoNueva._id, precioRopaNueva._id);
             this.ropaService.agregarRopa(ropa1);
+
         })
         .catch(error => console.log(error));
-
       }
 
-      this.router.navigate(['ropas']);
+      this.router.navigate(['']);
   }
 
   eliminarRopa(){
@@ -188,7 +188,7 @@ export class FormularioRopaComponent implements OnInit {
       this.ropaService.eliminarRopa(this.indiceRopa).subscribe((datos) => console.log(datos));
     }
 
-    this.router.navigate(['ropas']);
+    this.router.navigate(['']);
   }
 
   buscar(texto_busqueda:String){
