@@ -1,0 +1,9 @@
+<div id="menu">
+    <ul>
+        <li><a href="#">Tipos de ropa</a>
+            <ul>
+                <app-tiporopa *ngFor="let t of tiposRopas.body" [tiporopa] = "t"></app-tiporopa>
+            </ul>            
+        </li>        
+    </ul>
+</div>

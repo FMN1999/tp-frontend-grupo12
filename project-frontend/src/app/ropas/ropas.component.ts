@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {RopasService} from "../ropas.service";
+import { Component, Injectable, OnInit } from '@angular/core';
+import { RopasService } from '../ropas.service';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
+@Injectable()
 @Component({
   selector: 'app-ropas',
   templateUrl: './ropas.component.html',
@@ -8,14 +11,31 @@ import {RopasService} from "../ropas.service";
 })
 export class RopasComponent implements OnInit {
 
-  ropas:any= []
-  constructor(private service: RopasService) { }
 
-  ngOnInit(): void {
-  }
+
+  suscripcion:Subscription;
+  ropas:any= [];
+  search:String = null;
+  constructor(private ropaService: RopasService,
+              private router: Router) {}
+
 
   loadRopas(){
-    this.service.getRopas().subscribe(response => this.ropas = response);
+    this.ropaService.getRopas().subscribe(response => this.ropas = response);
   }
 
+  buscar(){
+    this.ropaService.buscar(this.search).subscribe( response => this.ropas = response);
+  }
+
+  ngOnInit(): void{
+    if (this.search == null){
+      this.loadRopas();
+      this.suscripcion = this.ropaService.refresh$.subscribe(() => {
+        this.loadRopas();
+      })
+    } else{
+      this.buscar();
+    }
+  }
 }

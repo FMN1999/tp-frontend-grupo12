@@ -1,5 +1,23 @@
-<pre>
-  {{ropas | json}}
-</pre>
+<!-- Falta lo de agregar ropa -->
 
-<button (click)="loadRopas()">Cargar</button>
+
+<h1>LISTADO DE ROPAS</h1>
+<hr>
+<br>
+<div class="container">
+  <input id="searchbox" type="text" placeholder="Search.." name= "search" [(ngModel)]= "search" (input)="this.buscar()">
+  <!-- <button type="submit" [routerLink]="['/ropasSearch', search]"> Buscar</button> -->
+</div>
+<app-ropa *ngFor="let rop of ropas.body"
+[ropa] = "rop"
+[indice] = "rop._id">
+</app-ropa>
+
+<!-- <div *ngIf="rp!==null">
+  <app-ropa
+    [rp] = "rp"
+    [indice] = "rp._id">
+  </app-ropa>
+</div> -->
+
+
