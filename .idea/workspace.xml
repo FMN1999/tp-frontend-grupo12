@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69c7de33-bad9-46fe-aa0b-418ed44fcb1a" name="Changes" comment="se muestran los comentarios sin problemas, agregar diseño">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/comentarios-ropa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/comentarios-ropa.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/comentarios-ropa/comentarios-ropa.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/comentarios-ropa/comentarios-ropa.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/comentarios-ropa/comentarios-ropa.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/comentarios-ropa/comentarios-ropa.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/listado-comentarios-ropa/listado-comentarios-ropa.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/listado-comentarios-ropa/listado-comentarios-ropa.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/listado-comentarios-ropa/listado-comentarios-ropa.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/listado-comentarios-ropa/listado-comentarios-ropa.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas/ropa/ropa.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas/ropa/ropa.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-frontend/src/app/ropas.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project-frontend/src/app/ropas.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +60,9 @@
       <workItem from="1662687628264" duration="7204000" />
       <workItem from="1662832592527" duration="5239000" />
       <workItem from="1662922686852" duration="1545000" />
+      <workItem from="1664666373844" duration="1808000" />
+      <workItem from="1664802844742" duration="376000" />
+      <workItem from="1664803553387" duration="2446000" />
     </task>
     <task id="LOCAL-00001" summary="agregado metodo y html de busqueda">
       <created>1662838074880</created>
