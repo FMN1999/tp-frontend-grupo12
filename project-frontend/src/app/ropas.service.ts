@@ -11,7 +11,7 @@ export class RopasService {
 
 
   private _refresh$ = new Subject<void>();
-  readonly baseURL = "http://localhost:3000/api/ropas";
+  readonly baseURL = "http://localhost:3000/api/ropas/";
 
   ropas:any= [];
   constructor(private httpClientService: HttpClient) { }
