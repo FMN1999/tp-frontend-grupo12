@@ -11,7 +11,7 @@ export class RopasService {
 
 
   private _refresh$ = new Subject<void>();
-  readonly baseURL = "http://localhost:3000/api/ropas/";
+  readonly baseURL = "http://localhost:3000/api/ropas";
 
   ropas:any= [];
   constructor(private httpClientService: HttpClient) { }
@@ -41,7 +41,7 @@ export class RopasService {
 
   //Funcionando correctamente
   eliminarRopa(id:String){
-    const url = this.baseURL + `${id}`;
+    const url = this.baseURL + '/'+`${id}`;
     return this.httpClientService.delete<any>(url).pipe(tap(() => {
       this._refresh$.next();
     }));
@@ -49,7 +49,7 @@ export class RopasService {
 
   //Funcionando correctamente
   updateRopa(id:String, ropa:Ropa){
-    const url = this.baseURL + `${id}`;
+    const url = this.baseURL + '/'+`${id}`;
     return this.httpClientService.put<any>(url, ropa).pipe(tap( () => {
       this._refresh$.next();
     }));

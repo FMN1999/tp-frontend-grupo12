@@ -114,7 +114,7 @@ export class FormularioRopaComponent implements OnInit {
       let tipoRopaNueva = new TipoRopa();
       let precioRopaNueva = new PrecioRopa();
 
-      if(this.indiceRopa != null){
+      if(this.indiceRopa !== null){
         let ropa = new Ropa();
 
         ropa.categoria = this.categoriaInput;
@@ -149,7 +149,7 @@ export class FormularioRopaComponent implements OnInit {
         .catch(error => console.log(error));
 
       }
-      
+
       else{
 
         //Busco la temporada que ingresé en el campo temporada, mediante su detalle
