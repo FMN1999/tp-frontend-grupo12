@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TipoRopaReqResResponse } from './models/tiporopa-reqres-response';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +8,14 @@ export class TiporopasService {
 
   constructor(private httpClientService: HttpClient) { }
 
-  baseUrl = "http://localhost:3000/api/";
+  baseUrl = "http://localhost:3000/api/tiposRopa";
 
   getTipoRopas() {
-    const url = this.baseUrl + "tiposRopa";
-    return this.httpClientService.get<any>(url);
+    return this.httpClientService.get<any>(this.baseUrl);
   }
 
   getTipoRopaByDetalle = (detalle) => {
-    const url = this.baseUrl + `tipoRopa/${detalle}`;
+    const url = this.baseUrl + `/tr/${detalle}`;
     let tipoRopa;
     this.httpClientService.get<any>(url).subscribe((tipoRopaParam) => tipoRopa = tipoRopaParam.body);
     return new Promise((resolve, reject) => {

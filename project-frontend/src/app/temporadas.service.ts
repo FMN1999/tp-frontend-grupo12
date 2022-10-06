@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TemporadaReqResResponse } from './models/temporada-reqres-response';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +8,15 @@ export class TemporadasService {
 
   constructor(private httpClientService: HttpClient) { }
 
-  baseUrl = "http://localhost:3000/api/";
+  baseUrl = "http://localhost:3000/api/temporadas";
 
   getTemporadas() {
-    const url = this.baseUrl + "temporadas";
-    return this.httpClientService.get<any>(url);
+    return this.httpClientService.get<any>(this.baseUrl);
   }
   
   
   getTemporadaByDetalle = (detalle) => {
-    const url = this.baseUrl + `temporada/${detalle}`;
+    const url = this.baseUrl + `/det/${detalle}`;
     let tempo;
     this.httpClientService.get<any>(url).subscribe( (tempoParam) => tempo = tempoParam.body);
     return new Promise( (resolve, reject) => {  

@@ -6,12 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EmpleadosService {
 
-  readonly baseURL = "http://localhost:3000/api/";
+  readonly baseURL = "http://localhost:3000/api/empleados";
 
   constructor(private httpClientService: HttpClient) { }
 
   getEmpleados() {
-    const url = this.baseURL + "empleados";
-    return this.httpClientService.get<any>(url);
+    return this.httpClientService.get<any>(this.baseURL);
   }
 }
