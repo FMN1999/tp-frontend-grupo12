@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { ComentarioRopa } from './models/comentario-ropa-model';
+import { ComentarioRopa } from '../models/comentario-ropa-model';
 import { Observable } from 'rxjs';
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import { Ropa } from './models/ropa.model';
+import { Ropa } from '../models/ropa.model';
 import { Subject } from 'rxjs';
 import {tap} from 'rxjs/operators'
 
@@ -11,7 +11,7 @@ export class RopasService {
 
 
   private _refresh$ = new Subject<void>();
-  readonly baseURL = "http://localhost:3000/api/ropas/";
+  readonly baseURL = "http://localhost:3000/api/";
 
   ropas:any= [];
   constructor(private httpClientService: HttpClient) { }
@@ -22,14 +22,14 @@ export class RopasService {
   }
 
   getRopas() {
-    const url = this.baseURL;
+    const url = this.baseURL+"ropas";
     this.ropas = this.httpClientService.get(url);
     return this.httpClientService.get<any>(url);
   }
 
 
   getRopaById = (id) => {
-    const url = this.baseURL + `${id}`;
+    const url = this.baseURL + `ropas/${id}`;
     let ropa;
     this.httpClientService.get<any>(url).subscribe((ropaParam) => ropa = ropaParam.body);
     return new Promise((resolve, reject) => {
@@ -41,7 +41,7 @@ export class RopasService {
 
   //Funcionando correctamente
   eliminarRopa(id:String){
-    const url = this.baseURL + `${id}`;
+    const url = this.baseURL + `ropas/${id}`;
     return this.httpClientService.delete<any>(url).pipe(tap(() => {
       this._refresh$.next();
     }));
@@ -49,7 +49,7 @@ export class RopasService {
 
   //Funcionando correctamente
   updateRopa(id:String, ropa:Ropa){
-    const url = this.baseURL + `${id}`;
+    const url = this.baseURL + `ropas/${id}`;
     return this.httpClientService.put<any>(url, ropa).pipe(tap( () => {
       this._refresh$.next();
     }));
@@ -58,7 +58,7 @@ export class RopasService {
 
   //Funcionando correctamente
   agregarRopa(ropa:Ropa){
-    const url = this.baseURL;
+    const url = this.baseURL +"ropas";
     this.httpClientService.post(url, ropa).pipe(tap( () => {
       this._refresh$.next();
     }))
@@ -66,7 +66,7 @@ export class RopasService {
   }
 
   buscar = (texto_busqueda) =>{
-    const url = this.baseURL + `ropasSearch/${texto_busqueda}`;
+    const url = this.baseURL + `ropas/ropasSearch/${texto_busqueda}`;
     this.ropas = this.httpClientService.get(url);
     return this.httpClientService.get<any>(url);
   }

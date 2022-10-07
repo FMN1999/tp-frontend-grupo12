@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PrecioRopaReqResResponse } from './models/precioropa-reqres-response';
+import { PrecioRopaReqResResponse } from '../models/precioropa-reqres-response';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +17,11 @@ export class PreciosropaService {
   }
 
   getPrecioRopaByImporte = (importe) => {
-    const url = this.baseUrl + `precioRopa/${importe}`;
+    const url = this.baseUrl + `preciosRopa/precioRopa/${importe}`;
     let precioRopa;
     this.httpClientService.get<any>(url).subscribe((propaParam) => precioRopa = propaParam.body);
     return new Promise((resolve, reject) => {
-      setTimeout( () => {      
+      setTimeout( () => {
         resolve(precioRopa)
       }, 2500)
     })

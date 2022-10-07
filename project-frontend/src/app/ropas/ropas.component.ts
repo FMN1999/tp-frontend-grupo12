@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { RopasService } from '../ropas.service';
+import { RopasService } from '../services/ropas.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
