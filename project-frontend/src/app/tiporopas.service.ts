@@ -12,16 +12,16 @@ export class TiporopasService {
   baseUrl = "http://localhost:3000/api/";
 
   getTipoRopas() {
-    const url = this.baseUrl + "tiposRopa";
+    const url = this.baseUrl+"tiposRopa";
     return this.httpClientService.get<any>(url);
   }
 
   getTipoRopaByDetalle = (detalle) => {
-    const url = this.baseUrl + `tipoRopa/${detalle}`;
+    const url = this.baseUrl + `tiposRopa/tipoRopa/${detalle}`;
     let tipoRopa;
     this.httpClientService.get<any>(url).subscribe((tipoRopaParam) => tipoRopa = tipoRopaParam.body);
     return new Promise((resolve, reject) => {
-      setTimeout( () => {      
+      setTimeout( () => {
         resolve(tipoRopa)
       }, 2500)
     })
