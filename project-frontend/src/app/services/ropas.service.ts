@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import { Ropa } from './models/ropa.model';
+import { Ropa } from '../models/ropa.model';
 import { Subject } from 'rxjs';
 import {tap} from 'rxjs/operators'
 

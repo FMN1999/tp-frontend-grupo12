@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TipoRopaReqResResponse } from './models/tiporopa-reqres-response';
+import { TipoRopaReqResResponse } from '../models/tiporopa-reqres-response';
 
 @Injectable({
   providedIn: 'root'

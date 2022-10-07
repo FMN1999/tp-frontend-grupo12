@@ -4,10 +4,10 @@ import { PrecioRopa } from '../../models/precioRopa.model';
 import { Ropa } from '../../models/ropa.model';
 import { Temporada } from '../../models/temporada.model';
 import { TipoRopa } from '../../models/tipoRopa.model';
-import { RopasService } from '../../ropas.service';
-import { TemporadasService } from '../../temporadas.service';
-import { TiporopasService } from '../../tiporopas.service';
-import {PreciosropaService} from '../../preciosropa.service';
+import { RopasService } from '../../services/ropas.service';
+import { TemporadasService } from '../../services/temporadas.service';
+import { TiporopasService } from '../../services/tiporopas.service';
+import {PreciosropaService} from '../../services/preciosropa.service';
 
 @Component({
   selector: 'app-formulario-ropa',
@@ -25,7 +25,7 @@ export class FormularioRopaComponent implements OnInit {
   tipoRopaInput:string;
   temporadaInput:string;
   precioRopaInput:string;
-  indiceRopa: String;
+  indiceRopa: String = null;
   temporada: Temporada;
   deshabilitar: boolean;
   modoEliminar: number;
@@ -114,7 +114,7 @@ export class FormularioRopaComponent implements OnInit {
       let tipoRopaNueva = new TipoRopa();
       let precioRopaNueva = new PrecioRopa();
 
-      if(this.indiceRopa !== null){
+      if (this.indiceRopa != null){
         let ropa = new Ropa();
 
         ropa.categoria = this.categoriaInput;

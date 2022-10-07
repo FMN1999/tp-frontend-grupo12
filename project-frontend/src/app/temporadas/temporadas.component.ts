@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TemporadasService} from '../temporadas.service';
+import {TemporadasService} from '../services/temporadas.service';
 
 @Component({
   selector: 'app-temporadas',
@@ -11,7 +11,7 @@ export class TemporadasComponent implements OnInit {
   temporadas:any= [];
   constructor(private temporadaService: TemporadasService) {}
 
-  
+
   loadTemporadas(){
     this.temporadaService.getTemporadas().subscribe(response => this.temporadas = response);
   }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TemporadaReqResResponse } from './models/temporada-reqres-response';
+import { TemporadaReqResResponse } from '../models/temporada-reqres-response';
 
 @Injectable({
   providedIn: 'root'

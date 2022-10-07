@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PrecioRopaReqResResponse } from './models/precioropa-reqres-response';
+import { PrecioRopaReqResResponse } from '../models/precioropa-reqres-response';
 
 @Injectable({
   providedIn: 'root'
