@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <br>
 <h1>ROPAS</h1>
 <br><br><br>
@@ -36,17 +38,24 @@
         <input type="text" name="temporada" id="temporada"
         [(ngModel)]="temporadaInput" required>
         <br><br>
-        
+
         <label>Precio de ropa</label>
-        
+
         <br>
         <input type="text" name="precioRopa" id="precioRopa" [(ngModel)]="precioRopaInput" required>
         <br><br><br><br>
-        <button type="submit" style="cursor: pointer;" class="btn-80" id="btnAgregar">Agregar</button>
+        <button
+          type="submit"
+          style="cursor: pointer;"
+          class="btn-80"
+          id="btnAgregar"
+        >
+            Agregar
+        </button>
         <br><br>
         <!--Botón de ELIMINAR. Solo se mostrará en modo 'edición', es decir,
             si el índice del elemento NO es nulo.-->
-        <button type="submit" (click)="eliminarRopa()"  style="cursor: pointer;" *ngIf="indiceRopa != null" class="btn-80">Eliminar</button>
+        <button type="submit" (click)="eliminarRopa()"  style="cursor: pointer;" *ngIf="indiceRopa !== null" class="btn-80">Eliminar</button>
         </div>
     </form>
     <br><br>

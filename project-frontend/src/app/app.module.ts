@@ -5,13 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClientesService } from './clientes.service';
-import { EmpleadosService } from './empleados.service';
-import { PreciosropaService } from './preciosropa.service';
-import { RopasService } from './ropas.service';
+import { ClientesService } from './services/clientes.service';
+import { EmpleadosService } from './services/empleados.service';
+import { PreciosropaService } from './services/preciosropa.service';
+import { RopasService } from './services/ropas.service';
 import { TemporadaComponent } from './temporadas/temporada.component';
-import { TemporadasService } from './temporadas.service';
-import { TiporopasService } from './tiporopas.service';
+import { TemporadasService } from './services/temporadas.service';
+import { TiporopasService } from './services/tiporopas.service';
 import { RopaComponent } from './ropas/ropa/ropa.component';
 import { RopasComponent } from './ropas/ropas.component';
 import { FormularioRopaComponent } from './ropas/formulario-ropa/formulario-ropa.component';
@@ -28,6 +28,7 @@ import { PreciosropasComponent } from './preciosropas/preciosropas.component';
 import { ComentariosRopaComponent } from './ropas/comentarios-ropa/comentarios-ropa.component';
 import { HomeComponent } from './home/home.component';
 import { ListadoComentariosRopaComponent } from './ropas/listado-comentarios-ropa/listado-comentarios-ropa.component';
+import { HeaderComponent } from './home/header/header.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { ListadoComentariosRopaComponent } from './ropas/listado-comentarios-rop
     TemporadaComponent,
     RopaComponent,
     FormularioRopaComponent,
-    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent, EmpleadosComponent, EmpleadoComponent, PrecioropaComponent, PreciosropasComponent, ComentariosRopaComponent, HomeComponent, ListadoComentariosRopaComponent
+    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent, EmpleadosComponent, EmpleadoComponent, PrecioropaComponent, PreciosropasComponent, ComentariosRopaComponent, HomeComponent, ListadoComentariosRopaComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,

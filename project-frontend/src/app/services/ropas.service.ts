@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import { Ropa } from './models/ropa.model';
+import { Ropa } from '../models/ropa.model';
 import { Subject } from 'rxjs';
 import {tap} from 'rxjs/operators'
 
@@ -22,7 +22,7 @@ export class RopasService {
   }
 
   getRopas() {
-    const url = this.baseURL + "ropas";
+    const url = this.baseURL+"ropas";
     this.ropas = this.httpClientService.get(url);
     return this.httpClientService.get<any>(url);
   }
@@ -58,7 +58,7 @@ export class RopasService {
 
   //Funcionando correctamente
   agregarRopa(ropa:Ropa){
-    const url = this.baseURL + "ropas";
+    const url = this.baseURL +"ropas";
     this.httpClientService.post(url, ropa).pipe(tap( () => {
       this._refresh$.next();
     }))
@@ -66,7 +66,7 @@ export class RopasService {
   }
 
   buscar = (texto_busqueda) =>{
-    const url = this.baseURL + `ropasSearch/${texto_busqueda}`;
+    const url = this.baseURL + `ropas/ropasSearch/${texto_busqueda}`;
     this.ropas = this.httpClientService.get(url);
     return this.httpClientService.get<any>(url);
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {EmpleadosService} from '../empleados.service';
+import {EmpleadosService} from '../services/empleados.service';
 
 @Component({
   selector: 'app-empleados',
@@ -11,7 +11,7 @@ export class EmpleadosComponent implements OnInit {
   empleados:any= [];
   constructor(private empleadosService: EmpleadosService) {}
 
-  
+
   loadEmpleados(){
     this.empleadosService.getEmpleados().subscribe(response => this.empleados = response);
   }

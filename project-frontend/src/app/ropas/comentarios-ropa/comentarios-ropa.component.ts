@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ComentarioRopa } from '../../models/comentario-ropa-model';
-import { ComentariosRopaService } from '../../comentarios-ropa.service';
+import { ComentariosRopaService } from '../../services/comentarios-ropa.service';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Ropa} from "../../models/ropa.model";
 
