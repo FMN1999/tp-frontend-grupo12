@@ -1,0 +1,8 @@
+<app-header></app-header>
+
+<div class="column col" *ngFor="let c of comentarios.body">
+    <p>{{c.fecha}}</p>
+    <p><b>{{c.nombreUsuario + ' ' + c.apellidoUsuario}}</b>: {{c.detalle}}</p>
+    <hr>
+    <br>
+</div>

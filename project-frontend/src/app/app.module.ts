@@ -27,8 +27,8 @@ import { PrecioropaComponent } from './preciosropas/precioropa/precioropa.compon
 import { PreciosropasComponent } from './preciosropas/preciosropas.component';
 import { ComentariosRopaComponent } from './ropas/comentarios-ropa/comentarios-ropa.component';
 import { HomeComponent } from './home/home.component';
-import { ListadoComentariosRopaComponent } from './ropas/listado-comentarios-ropa/listado-comentarios-ropa.component';
 import { HeaderComponent } from './home/header/header.component';
+import { ComentarioRopaComponent } from './ropas/comentarios-ropa/comentario-ropa/comentario-ropa.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { HeaderComponent } from './home/header/header.component';
     TemporadaComponent,
     RopaComponent,
     FormularioRopaComponent,
-    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent, EmpleadosComponent, EmpleadoComponent, PrecioropaComponent, PreciosropasComponent, ComentariosRopaComponent, HomeComponent, ListadoComentariosRopaComponent, HeaderComponent
+    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent, EmpleadosComponent, EmpleadoComponent, PrecioropaComponent, PreciosropasComponent, ComentariosRopaComponent, HomeComponent, HeaderComponent, ComentarioRopaComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { FormularioRopaComponent } from './ropas/formulario-ropa/formulario-ropa
 import { RopasComponent } from './ropas/ropas.component';
 import { ComentariosRopaComponent } from './ropas/comentarios-ropa/comentarios-ropa.component';
 import { HomeComponent } from './home/home.component';
+import { ComentarioRopaComponent } from './ropas/comentarios-ropa/comentario-ropa/comentario-ropa.component';
 
 
 
@@ -14,7 +15,7 @@ const routes: Routes = [
   {path: 'ropas/agregar', component: FormularioRopaComponent},
   {path: 'ropas/:id', component: FormularioRopaComponent},
   {path: 'comentariosropa/:id', component: ComentariosRopaComponent},
-  {path: 'verComentarios/:id', component: ComentariosRopaComponent},
+  {path: 'verComentarios/:id', component: ComentarioRopaComponent},
   {path: 'ropasSearch/:texto_busqueda', component: RopasComponent}
 ];
 
