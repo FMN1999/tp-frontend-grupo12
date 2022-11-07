@@ -1,0 +1,38 @@
+
+.column{
+    background: #0096FF;
+    color: white;
+    display: inline-block;
+    margin: 35px;
+    
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+    font-weight: 700;
+    box-shadow: 15px 10px 5px black;
+    font-family: arial;
+    margin-left: 125px;
+}
+
+a{
+    background: #242F9B;
+    color: white;
+    text-decoration:none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: arial;
+}
+
+a:hover{
+    background: #14C38E;
+}
+h1{
+    color:#0096FF;
+    font-weight: 700;
+    text-align: center;
+    font-size: 40px;
+    font-family: arial;
+}
