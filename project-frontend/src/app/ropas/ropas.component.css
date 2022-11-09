@@ -7,7 +7,10 @@ h1{
 }
 
 #searchbox{
+<<<<<<< HEAD
   border-radius: 15px;
+=======
+>>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
   float: none;
   display: block;
   text-align: left;

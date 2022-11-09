@@ -1,7 +1,38 @@
+<<<<<<< HEAD
 <app-header></app-header>
 
 <br><br>
 
+=======
+<header class="cabecero"></header>
+
+<div class="container">
+    <nav class="contain row">
+        <div class="marca_ropa col-sm-3">
+            <h3 class="gama animate__animated animate__rubberBand">TIENDA DE ROPA</h3>
+        </div>
+        <div class="col-sm-9">
+            <p class="col">
+                <app-tiposropas></app-tiposropas>
+            </p>
+            <p class="col">
+                <app-temporadas></app-temporadas>
+            </p>
+            <p class="col">
+                <a [routerLink]="['/ropas/agregar']" class="style">Nueva Ropa</a>
+            </p>
+            <p class="col">
+                <app-empleados></app-empleados>
+            </p>
+            <p class="col">
+                <app-clientes></app-clientes>
+            </p>
+        </div>
+    </nav>
+</div>
+
+<br><br>
+>>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
 <div class="container-fluid">
     <section>
         <app-ropas></app-ropas>

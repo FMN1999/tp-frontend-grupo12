@@ -27,8 +27,12 @@ import { PrecioropaComponent } from './preciosropas/precioropa/precioropa.compon
 import { PreciosropasComponent } from './preciosropas/preciosropas.component';
 import { ComentariosRopaComponent } from './ropas/comentarios-ropa/comentarios-ropa.component';
 import { HomeComponent } from './home/home.component';
+<<<<<<< HEAD
 import { HeaderComponent } from './home/header/header.component';
 import { ComentarioRopaComponent } from './ropas/comentarios-ropa/comentario-ropa/comentario-ropa.component';
+=======
+import { ListadoComentariosRopaComponent } from './ropas/listado-comentarios-ropa/listado-comentarios-ropa.component';
+>>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { ComentarioRopaComponent } from './ropas/comentarios-ropa/comentario-rop
     TemporadaComponent,
     RopaComponent,
     FormularioRopaComponent,
+<<<<<<< HEAD
     RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent, EmpleadosComponent, EmpleadoComponent, PrecioropaComponent, PreciosropasComponent, ComentariosRopaComponent, HomeComponent, HeaderComponent, ComentarioRopaComponent
+=======
+    RopasComponent, TemporadasComponent, TiposropasComponent, TiporopaComponent, ClienteComponent, ClientesComponent, EmpleadosComponent, EmpleadoComponent, PrecioropaComponent, PreciosropasComponent, ComentariosRopaComponent, HomeComponent, ListadoComentariosRopaComponent
+>>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
   ],
   imports: [
     BrowserModule,

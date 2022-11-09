@@ -1,14 +1,34 @@
+<<<<<<< HEAD
+=======
+<!-- Falta lo de agregar ropa -->
+
+
+>>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
 <h1>LISTADO DE ROPAS</h1>
 <hr>
 <br>
 <div class="container">
   <input id="searchbox" type="text" placeholder="Search.." name= "search" [(ngModel)]= "search" (input)="this.buscar()">
+<<<<<<< HEAD
 </div>
 
+=======
+  <!-- <button type="submit" [routerLink]="['/ropasSearch', search]"> Buscar</button> -->
+</div>
+>>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
 <app-ropa *ngFor="let rop of ropas.body"
 [ropa] = "rop"
 [indice] = "rop._id">
 </app-ropa>
 
+<<<<<<< HEAD
+=======
+<!-- <div *ngIf="rp!==null">
+  <app-ropa
+    [rp] = "rp"
+    [indice] = "rp._id">
+  </app-ropa>
+</div> -->
+>>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
 
 
