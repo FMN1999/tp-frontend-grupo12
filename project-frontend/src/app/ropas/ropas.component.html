@@ -4,7 +4,7 @@
   <input id="searchbox" type="text" placeholder="Search.." name= "search" [(ngModel)]= "search" (input)="this.buscar()">
 </div>
 
-<app-ropa *ngFor="let rop of ropas.body"
+<app-ropa *ngFor="let rop of ropas"
 [ropa] = "rop"
 [indice] = "rop._id">
 </app-ropa>

@@ -23,11 +23,12 @@ export class RopasService {
 
   getRopas() {
     const url = this.baseURL+"ropas";
-    this.ropas = this.httpClientService.get(url);
     return this.httpClientService.get<any>(url);
   }
 
 
+  //Este método posee la variación en milisegundos del retorno de una ropa para su edición o 
+  //eliminado. Variarlo según sea necesario
   getRopaById = (id) => {
     const url = this.baseURL + `ropas/${id}`;
     let ropa;
@@ -35,11 +36,10 @@ export class RopasService {
     return new Promise((resolve, reject) => {
       setTimeout( () => {
         resolve(ropa)
-      }, 2500)
+      }, 500)
     })
   }
 
-  //Funcionando correctamente
   eliminarRopa(id:String){
     const url = this.baseURL + `ropas/${id}`;
     return this.httpClientService.delete<any>(url).pipe(tap(() => {
@@ -47,7 +47,6 @@ export class RopasService {
     }));
   }
 
-  //Funcionando correctamente
   updateRopa(id:String, ropa:Ropa){
     const url = this.baseURL + `ropas/${id}`;
     return this.httpClientService.put<any>(url, ropa).pipe(tap( () => {
@@ -55,8 +54,6 @@ export class RopasService {
     }));
   }
 
-
-  //Funcionando correctamente
   agregarRopa(ropa:Ropa){
     const url = this.baseURL +"ropas";
     this.httpClientService.post(url, ropa).pipe(tap( () => {

@@ -1,6 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { RopasService } from '../services/ropas.service';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Injectable()
@@ -11,18 +10,15 @@ import { Subscription } from 'rxjs';
 })
 export class RopasComponent implements OnInit {
 
-
-
   suscripcion:Subscription;
   ropas:any= [];
   search:String = null;
-  constructor(private ropaService: RopasService,
-              private router: Router) {}
-
+  constructor(private ropaService: RopasService) {}
 
   loadRopas(){
-    this.ropaService.getRopas().subscribe(response => this.ropas = response);
+    this.ropaService.getRopas().subscribe(ropasParam => this.ropas = ropasParam.body);
   }
+
 
   buscar(){
     if (this.search === "") {

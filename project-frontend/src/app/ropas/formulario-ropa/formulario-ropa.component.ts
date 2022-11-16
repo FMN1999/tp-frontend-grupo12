@@ -27,7 +27,6 @@ export class FormularioRopaComponent implements OnInit {
   precioRopaInput:string;
   indiceRopa: String = null;
   temporada: Temporada;
-  deshabilitar: boolean;
   modoEliminar: number;
 
 
@@ -49,8 +48,9 @@ export class FormularioRopaComponent implements OnInit {
     //Si el índice es diferente de nulo, entonces quiere decir que estamos en modo 'edicion', ya que se ha
     //seleccionado un elemento que no se está agregando, sino que ya se encuentra dentro del arreglo.
 
+
+    
     if(this.indiceRopa != null && this.modoEliminar === 1){
-      this.deshabilitar = true;
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
     }
@@ -59,6 +59,10 @@ export class FormularioRopaComponent implements OnInit {
       document.getElementById('btnAgregar').innerHTML = "Editar";
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
+    }
+
+    else if(this.indiceRopa == null){
+      document.getElementById('btnEliminar').style.display = 'none';
     }
 
   }
