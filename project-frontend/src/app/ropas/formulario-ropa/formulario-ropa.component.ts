@@ -189,12 +189,14 @@ export class FormularioRopaComponent implements OnInit {
   eliminarRopa(){
     //Compruebo si el índice es diferente de nulo
     if(this.indiceRopa != null){
-      this.ropaService.eliminarRopa(this.indiceRopa).subscribe((datos) => console.log(datos));
+      if(confirm('¿Desea eliminar la ropa seleccionada?')){
+        this.ropaService.eliminarRopa(this.indiceRopa).subscribe((datos) => console.log(datos));
+      }
     }
-
     this.router.navigate(['']);
   }
 
+  
   buscar(texto_busqueda:String){
     this.ropaService.buscar(texto_busqueda);
   }
