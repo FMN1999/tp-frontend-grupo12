@@ -25,15 +25,11 @@ export class RopasComponent implements OnInit {
   }
 
   buscar(){
-<<<<<<< HEAD
     if (this.search === "") {
       this.loadRopas()
     }else{
       this.ropaService.buscar(this.search).subscribe( response => this.ropas = response);
     }
-=======
-    this.ropaService.buscar(this.search).subscribe( response => this.ropas = response);
->>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
   }
 
   ngOnInit(): void{

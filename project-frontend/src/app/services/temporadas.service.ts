@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TemporadaReqResResponse } from '../models/temporada-reqres-response';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +17,6 @@ export class TemporadasService {
     return this.httpClientService.get<any>(url);
   }
 
-
   getTemporadaByDetalle = (detalle) => {
     const url = this.baseUrl + `temporadas/temporada/${detalle}`;
     let tempo;
@@ -27,6 +27,4 @@ export class TemporadasService {
       }, 2500)
     })
   }
-
-
 }

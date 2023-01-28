@@ -1,23 +1,18 @@
-<div class="column col">
-  <p>Marca: {{ropa.marca}}</p>
-  <hr>
-  <p>Categoria: {{ropa.categoria}}</p>
-  <hr>
-  <p>Detalle: {{ropa.detalle}}</p>
-  <hr>
-  <p>Talle: {{ropa.talle}}</p>
-  <br>
-  <a [routerLink]="['/ropas', indice]">Editar/Eliminar</a>
-  <br>
-  <a [routerLink]="['/comentariosropa', indice]">Agregar comentario</a>
-  <br>
-<<<<<<< HEAD
-  <br>
-  <a [routerLink]="['/verComentarios', indice]">Ver comentarios</a>
-  <br>
-=======
-  <a [routerLink]="['/verComentarios', indice]">Ver Comentarios</a>
->>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
+<div class="column">
+  <div class="card">
+      <br>
+      <p><button class="fa-solid fa-shirt"></button></p>
+      <br>
+      <p><strong>Marca:</strong> {{ropa.marca}}</p>
+      <p><strong>Categoria:</strong> {{ropa.categoria}}</p>
+      <p><strong>Talle:</strong> {{ropa.talle}}</p>
+      <p><strong>Detalle:</strong> {{ropa.detalle}}</p>  
+      <br>
+      <button class="btnComentarios fa-solid fa-comments" [routerLink]="['/verComentarios', indice]"></button>
+      <br>
+      <a [routerLink]="['/ropas', indice]">Editar/Eliminar</a>
+      <br>
+      <a [routerLink]="['/comentariosropa', indice]">Agregar comentario</a>
+      <br>
+  </div>
 </div>
-
-

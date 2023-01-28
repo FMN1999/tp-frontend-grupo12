@@ -1,42 +1,4 @@
-<<<<<<< HEAD
-
-=======
-.cabecero{
-    width: 100%;
-    height: 70px;
+.container-fluid{
     justify-content: center;
-}
-.contain{
-    background: #0096FF; 
-    border-radius: 20px;
-}
-p{
-    display: inline-block;
-    margin-left: 20px;
-    font-family: arial;    
-}
-section{
     display: flex;
 }
-
-.style {
-    font-weight: 700;
-    color:white;
-    text-decoration:none;
-    padding: 25px;
-    border-radius: 10px;
-}
-
-.style:hover {
-    background: #14C38E;
-}
-.marca_ropa{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-h3{
-    font-family: fantasy;
-    color: aliceblue;
-} 
->>>>>>> 7ee2a49e53124bba6b30b0dd9c05ac0a953bbbd3
