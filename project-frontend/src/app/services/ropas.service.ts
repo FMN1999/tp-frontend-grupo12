@@ -22,7 +22,7 @@ export class RopasService {
   }
 
   getRopas() {
-    const url = this.baseURL+"ropas";
+    const url = this.baseURL + "ropas";
     return this.httpClientService.get<any>(url);
   }
 

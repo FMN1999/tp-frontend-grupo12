@@ -16,4 +16,12 @@ export class RopaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mostrar(){
+    document.getElementById('paraVerMas').style.display = 'block';
+  }
+
+  ocultar(){
+    document.getElementById('paraVerMas').style.display = 'none';
+  }
+
 }

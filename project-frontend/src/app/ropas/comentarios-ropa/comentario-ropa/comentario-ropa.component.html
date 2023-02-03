@@ -1,8 +1,17 @@
 <app-header></app-header>
-
-<div class="column col" *ngFor="let c of comentarios.body">
-    <p>{{c.fecha}}</p>
-    <p><b>{{c.nombreUsuario + ' ' + c.apellidoUsuario}}</b>: {{c.detalle}}</p>
-    <hr>
+<div class="main">
     <br>
+    <h1>COMENTARIOS</h1>
+    <div class="column" *ngFor="let c of comentarios.body">
+        <div class="card" >
+            <br>
+            <a class="icono fa-solid fa-comments"></a>
+            <br>
+            <p class="comentario">{{c.detalle}}</p>
+            <br>
+            <p><strong>Nombre:</strong> {{c.nombreUsuario + ' ' + c.apellidoUsuario}}</p>
+            <p><strong>Fecha:</strong> {{c.fecha}}</p>
+            <br>
+        </div>    
+    </div>    
 </div>

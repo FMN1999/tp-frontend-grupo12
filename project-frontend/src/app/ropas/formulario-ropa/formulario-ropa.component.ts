@@ -148,7 +148,7 @@ export class FormularioRopaComponent implements OnInit {
           precioRopaNueva = proParam[0];
           ropa.precioRopa = precioRopaNueva._id;
           this.ropaService.updateRopa(this.indiceRopa, ropa)
-          .subscribe((datos) => console.log("Ropa actualizada correctamente: " + datos));
+          .subscribe((datos) => console.log("Ropa actualizada correctamente: "));
         })
         .catch(error => console.log(error));
 
@@ -201,3 +201,5 @@ export class FormularioRopaComponent implements OnInit {
     this.ropaService.buscar(texto_busqueda);
   }
 }
+
+
