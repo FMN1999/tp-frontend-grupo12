@@ -24,7 +24,7 @@ export class RopasComponent implements OnInit {
     if (this.search === "") {
       this.loadRopas()
     }else{
-      this.ropaService.buscar(this.search).subscribe( response => this.ropas = response);
+      this.ropaService.buscar(this.search).subscribe(response => this.search = response);
     }
   }
 

@@ -201,5 +201,3 @@ export class FormularioRopaComponent implements OnInit {
     this.ropaService.buscar(texto_busqueda);
   }
 }
-
-
