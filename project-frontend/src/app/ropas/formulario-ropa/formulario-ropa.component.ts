@@ -26,8 +26,8 @@ export class FormularioRopaComponent implements OnInit {
   temporadaInput:string;
   precioRopaInput:string;
   indiceRopa: String = null;
-  temporada: Temporada;
   modoEliminar: number;
+  habilitaBoton: boolean = true;
 
 
 
@@ -49,20 +49,17 @@ export class FormularioRopaComponent implements OnInit {
     //seleccionado un elemento que no se está agregando, sino que ya se encuentra dentro del arreglo.
 
 
-    
+    /*
     if(this.indiceRopa != null && this.modoEliminar === 1){
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
-    }
+    }*/
 
-    else if(this.indiceRopa != null){
+    //else if(this.indiceRopa != null){
+    if(this.indiceRopa != null){
       document.getElementById('btnAgregar').innerHTML = "Editar";
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
-    }
-
-    else if(this.indiceRopa == null){
-      document.getElementById('btnEliminar').style.display = 'none';
     }
 
   }
@@ -89,6 +86,13 @@ export class FormularioRopaComponent implements OnInit {
     this.tipoRopaInput = tipoRopa._id;
     this.temporadaInput = temporada.detalle;
     this.precioRopaInput = precioRopa._id;
+
+    if(this.marcaInput != null && this.categoriaInput != null && this.talleInput != null
+      && this.detalleInput != null && this.tipoRopaInput != null && this.temporadaInput != null 
+      && this.precioRopaInput != null){
+      this.habilitaBoton = false;
+    }
+
   }
 
   //Método para comunicarme con la capa de servicio, y así obtener una ropa mediante su id.
@@ -198,6 +202,7 @@ export class FormularioRopaComponent implements OnInit {
 
   
   buscar(texto_busqueda:String){
+    console.log("Texto de búsqueda: " + texto_busqueda);
     this.ropaService.buscar(texto_busqueda);
   }
 }

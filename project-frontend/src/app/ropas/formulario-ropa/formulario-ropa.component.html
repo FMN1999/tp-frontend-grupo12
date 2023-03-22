@@ -34,9 +34,10 @@
                     <input type="text" class="field" name="precioRopa" id="precioRopa" [(ngModel)]="precioRopaInput" required>
                 </div>
                 <div class="user-input-box">
-                    <button type="submit" class="btn-80" id="btnAgregar">Agregar</button>
+                    <button type="submit" class="btn-80" id="btnAgregar" [disabled]="habilitaBoton">Agregar</button>
                     <!--Botón de ELIMINAR. Solo se mostrará en modo 'edición', es decir, si el índice del elemento NO es nulo.-->
-                    <button type="submit" (click)="eliminarRopa()" *ngIf="indiceRopa !== null" class="btn-80">Eliminar</button>
+                    <button type="submit" (click)="eliminarRopa()" *ngIf="indiceRopa != null" class="btn-80"
+                    [disabled]="habilitaBoton">Eliminar</button>
                 </div>
             </div>
         </form>

@@ -22,9 +22,9 @@ export class RopasComponent implements OnInit {
 
   buscar(){
     if (this.search === "") {
-      this.loadRopas()
+      this.loadRopas();
     }else{
-      this.ropaService.buscar(this.search).subscribe( response => this.ropas = response);
+      this.ropaService.buscar(this.search).subscribe( response => this.ropas = response.body);
     }
   }
 
