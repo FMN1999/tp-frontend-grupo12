@@ -64,7 +64,6 @@ export class RopasService {
 
   buscar = (texto_busqueda) =>{
     const url = this.baseURL + `ropas/ropasSearch/${texto_busqueda}`;
-    //this.ropas = this.httpClientService.get(url);
     return this.httpClientService.get<any>(url);
   }
 }
