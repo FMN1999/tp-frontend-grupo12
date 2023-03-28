@@ -2,13 +2,7 @@
 
 <br>
 <div class="container">
-  <input id="searchbox" type="text" placeholder="Search.." name= "search" [(ngModel)]= "search" (input)="this.buscar()">
+  <input id="searchbox" type="text" placeholder="Search.." name= "search" [(ngModel)]= "search" (input)="this.buscar()" size="1000">
 </div>
 
-<app-ropa *ngFor="let rop of ropas"
-[ropa] = "rop"
-[indice] = "rop._id">
-</app-ropa>
-
-
-
+<app-ropa *ngFor="let rop of ropas" [ropa] = "rop" [indice] = "rop._id"></app-ropa>

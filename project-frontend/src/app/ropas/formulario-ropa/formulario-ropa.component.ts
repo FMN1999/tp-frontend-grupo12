@@ -26,8 +26,7 @@ export class FormularioRopaComponent implements OnInit {
   temporadaInput:string;
   precioRopaInput:string;
   indiceRopa: String = null;
-  temporada: Temporada;
-  modoEliminar: number;
+  habilitaBoton: boolean;
 
 
 
@@ -43,26 +42,16 @@ export class FormularioRopaComponent implements OnInit {
 
     //Capturo el id que me viene del formulario de ropas.
     this.indiceRopa = this.route.snapshot.params['id'];
-    this.modoEliminar = +this.route.snapshot.queryParams['modoEliminar'];
 
     //Si el índice es diferente de nulo, entonces quiere decir que estamos en modo 'edicion', ya que se ha
     //seleccionado un elemento que no se está agregando, sino que ya se encuentra dentro del arreglo.
 
 
-    
-    if(this.indiceRopa != null && this.modoEliminar === 1){
-      this.getRopaById(this.indiceRopa)
-      .then( (ropaParam) => this.mapearDeDatos(ropaParam))
-    }
-
-    else if(this.indiceRopa != null){
+    if(this.indiceRopa != null){
+      this.habilitaBoton = true;
       document.getElementById('btnAgregar').innerHTML = "Editar";
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
-    }
-
-    else if(this.indiceRopa == null){
-      document.getElementById('btnEliminar').style.display = 'none';
     }
 
   }
@@ -89,6 +78,13 @@ export class FormularioRopaComponent implements OnInit {
     this.tipoRopaInput = tipoRopa._id;
     this.temporadaInput = temporada.detalle;
     this.precioRopaInput = precioRopa._id;
+
+    if(this.marcaInput != null && this.categoriaInput != null && this.talleInput != null
+      && this.detalleInput != null && this.tipoRopaInput != null && this.temporadaInput != null 
+      && this.precioRopaInput != null){
+      this.habilitaBoton = false;
+    }
+
   }
 
   //Método para comunicarme con la capa de servicio, y así obtener una ropa mediante su id.
@@ -111,13 +107,14 @@ export class FormularioRopaComponent implements OnInit {
   }
 
   guardarRopa(){
-      //Valido que el índice sea distinto de nulo. Si así ocurre, quiere decir que estamos en modo
-      //'edición'
-
+      
       let tempoNueva = new Temporada();
       let tipoRopaNueva = new TipoRopa();
       let precioRopaNueva = new PrecioRopa();
 
+
+      //Valido que el índice sea distinto de nulo. Si así ocurre, quiere decir que estamos en modo
+      //'edición'
       if (this.indiceRopa != null){
         let ropa = new Ropa();
 
@@ -147,15 +144,17 @@ export class FormularioRopaComponent implements OnInit {
         .then( (proParam) => {
           precioRopaNueva = proParam[0];
           ropa.precioRopa = precioRopaNueva._id;
-          this.ropaService.updateRopa(this.indiceRopa, ropa)
-          .subscribe((datos) => console.log("Ropa actualizada correctamente: "));
+          if(confirm('¿Desea modificar la ropa?')){
+            this.ropaService.updateRopa(this.indiceRopa, ropa)
+            .subscribe((datos) => console.log("Ropa actualizada correctamente: "));
+            this.router.navigate(['']);
+          }
         })
         .catch(error => console.log(error));
 
       }
 
       else{
-
         //Busco la temporada que ingresé en el campo temporada, mediante su detalle
         this.getTemporadaByDetalle(this.temporadaInput)
         .then( (tempo) => {
@@ -174,16 +173,20 @@ export class FormularioRopaComponent implements OnInit {
         this.getPrecioRopaByImporte(this.precioRopaInput)
         .then( (proParam) => {
           precioRopaNueva = proParam[0];
-          console.log(precioRopaNueva.fechaDesde);
+
           let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput,
             this.detalleInput, tipoRopaNueva._id, tempoNueva._id, precioRopaNueva._id);
-            this.ropaService.agregarRopa(ropa1);
+            
+            if(confirm('¿Desea agregar la ropa?')){
+              this.ropaService.agregarRopa(ropa1);
+              this.router.navigate(['']);
+            }
+            
 
         })
         .catch(error => console.log(error));
       }
 
-      this.router.navigate(['']);
   }
 
   eliminarRopa(){
@@ -198,6 +201,8 @@ export class FormularioRopaComponent implements OnInit {
 
   
   buscar(texto_busqueda:String){
+    console.log("Texto de búsqueda: " + texto_busqueda);
     this.ropaService.buscar(texto_busqueda);
   }
+
 }
