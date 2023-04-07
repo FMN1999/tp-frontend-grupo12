@@ -8,6 +8,7 @@ import { RopasService } from '../../services/ropas.service';
 import { TemporadasService } from '../../services/temporadas.service';
 import { TiporopasService } from '../../services/tiporopas.service';
 import {PreciosropaService} from '../../services/preciosropa.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario-ropa',
@@ -144,11 +145,27 @@ export class FormularioRopaComponent implements OnInit {
         .then( (proParam) => {
           precioRopaNueva = proParam[0];
           ropa.precioRopa = precioRopaNueva._id;
-          if(confirm('¿Desea modificar la ropa?')){
-            this.ropaService.updateRopa(this.indiceRopa, ropa)
-            .subscribe((datos) => console.log("Ropa actualizada correctamente: "));
-            this.router.navigate(['']);
-          }
+          
+          Swal.fire({
+            title: 'Estas seguro?',
+            text: "Editarás esta prenda",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, editalo!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.ropaService.updateRopa(this.indiceRopa, ropa)
+              .subscribe((datos) => console.log("Ropa actualizada correctamente: "));
+              this.router.navigate(['']);
+              Swal.fire(
+                'Editado!',
+                'La prenda ha sido editada',
+                'success'
+              )
+            }
+          })
         })
         .catch(error => console.log(error));
 
@@ -177,11 +194,25 @@ export class FormularioRopaComponent implements OnInit {
           let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput,
             this.detalleInput, tipoRopaNueva._id, tempoNueva._id, precioRopaNueva._id);
             
-            if(confirm('¿Desea agregar la ropa?')){
-              this.ropaService.agregarRopa(ropa1);
-              this.router.navigate(['']);
-            }
-            
+            Swal.fire({
+              title: 'Estas seguro?',
+              text: "Estas a punto de agregar una nueva prenda!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Si, hazlo!'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.ropaService.agregarRopa(ropa1);
+                this.router.navigate(['']);
+                Swal.fire(
+                  'Agregado!',
+                  'La prenda a sido agregada',
+                  'success'
+                )
+              }
+            })            
 
         })
         .catch(error => console.log(error));
@@ -192,9 +223,25 @@ export class FormularioRopaComponent implements OnInit {
   eliminarRopa(){
     //Compruebo si el índice es diferente de nulo
     if(this.indiceRopa != null){
-      if(confirm('¿Desea eliminar la ropa seleccionada?')){
-        this.ropaService.eliminarRopa(this.indiceRopa).subscribe((datos) => console.log(datos));
-      }
+
+      Swal.fire({
+        title: 'Estas seguro?',
+        text: "No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, adelante!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.ropaService.eliminarRopa(this.indiceRopa).subscribe((datos) => console.log(datos));
+          Swal.fire(
+            'Eliminado!',
+            'La prenda ha sido eliminada',
+            'success'
+          )
+        }
+      })
     }
     this.router.navigate(['']);
   }
