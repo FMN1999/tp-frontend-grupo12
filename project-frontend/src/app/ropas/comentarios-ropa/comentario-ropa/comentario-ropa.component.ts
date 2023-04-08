@@ -20,7 +20,7 @@ export class ComentarioRopaComponent implements OnInit {
   }
 
   listarComentarios(id){
-    this.comentariosRopaService.getComentariosById(id).subscribe( response => this.comentarios = response.body)
+    this.comentariosRopaService.getComentariosById(id).subscribe( response => this.comentarios = response)
   }
 
 }
