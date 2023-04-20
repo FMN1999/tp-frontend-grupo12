@@ -13,6 +13,8 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'ropas', component: RopasComponent},
   {path: 'ropas/agregar', component: FormularioRopaComponent},
+  {path: 'preciosRopa', component: FormularioRopaComponent},
+  {path: 'preciosRopa/:importe', component: FormularioRopaComponent},
   {path: 'ropas/:id', component: FormularioRopaComponent},
   {path: 'comentariosropa/:id', component: ComentariosRopaComponent},
   {path: 'verComentarios/:id', component: ComentarioRopaComponent},

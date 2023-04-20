@@ -9,6 +9,7 @@ import { TemporadasService } from '../../services/temporadas.service';
 import { TiporopasService } from '../../services/tiporopas.service';
 import {PreciosropaService} from '../../services/preciosropa.service';
 import Swal from 'sweetalert2';
+import {formatNumber} from "@angular/common";
 
 @Component({
   selector: 'app-formulario-ropa',
@@ -25,7 +26,7 @@ export class FormularioRopaComponent implements OnInit {
   detalleInput:string;
   tipoRopaInput:string;
   temporadaInput:string;
-  precioRopaInput:string;
+  precioRopaInput:number;
   indiceRopa: String = null;
   habilitaBoton: boolean;
 
@@ -78,7 +79,7 @@ export class FormularioRopaComponent implements OnInit {
     this.detalleInput = ropa.detalle;
     this.tipoRopaInput = tipoRopa._id;
     this.temporadaInput = temporada.detalle;
-    this.precioRopaInput = precioRopa._id;
+    this.precioRopaInput = precioRopa.importe;
 
     if(this.marcaInput != null && this.categoriaInput != null && this.talleInput != null
       && this.detalleInput != null && this.tipoRopaInput != null && this.temporadaInput != null 
@@ -103,12 +104,11 @@ export class FormularioRopaComponent implements OnInit {
     return this.tipoRopaService.getTipoRopaByDetalle(detalle);
   }
 
-  getPrecioRopaByImporte(importe:string){
+  getPrecioRopaByImporte(importe:number){
     return this.precioRopaService.getPrecioRopaByImporte(importe);
   }
 
   guardarRopa(){
-      
       let tempoNueva = new Temporada();
       let tipoRopaNueva = new TipoRopa();
       let precioRopaNueva = new PrecioRopa();
@@ -141,9 +141,12 @@ export class FormularioRopaComponent implements OnInit {
         .catch(error => console.log(error));
 
         //Busco el precio de ropa que ingresé en el campo 'precio de ropa', mediante su importe
+        precioRopaNueva.importe = this.precioRopaInput;
+        precioRopaNueva.fechaDesde = Date.now().toString();
+        this.precioRopaService.agregarPrecioRopa(precioRopaNueva);
         this.getPrecioRopaByImporte(this.precioRopaInput)
         .then( (proParam) => {
-          precioRopaNueva = proParam[0];
+          precioRopaNueva = proParam;
           ropa.precioRopa = precioRopaNueva._id;
           
           Swal.fire({
@@ -187,9 +190,13 @@ export class FormularioRopaComponent implements OnInit {
         .catch(error => console.log(error));
 
         //Busco el precio de ropa que ingresé en el campo 'precio de ropa', mediante su importe
+        precioRopaNueva.importe = this.precioRopaInput;
+        precioRopaNueva.fechaDesde = Date.now().toString();
+        this.precioRopaService.agregarPrecioRopa(precioRopaNueva);
         this.getPrecioRopaByImporte(this.precioRopaInput)
         .then( (proParam) => {
-          precioRopaNueva = proParam[0];
+          //precioRopaNueva = proParam[0];
+          precioRopaNueva = proParam;
 
           let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput,
             this.detalleInput, tipoRopaNueva._id, tempoNueva._id, precioRopaNueva._id);
