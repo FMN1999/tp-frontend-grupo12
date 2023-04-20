@@ -1,9 +1,8 @@
-li {
-    background: #14C38E;
+li{
+    background: #1C82AD;
     padding: 20px;
-    border-radius: 5px;
-}
-a {
-    color: white;
-    text-decoration: none;
+    color: White;
+    border-top-style: solid;
+    border-color: Black;
+    border-radius: 10px;
 }

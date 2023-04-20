@@ -1,36 +1,39 @@
-* {
+*{
     margin:0px;
     padding:0px;
     font-family: arial;
 }
-
-ul, ol {
+ul{
     list-style:none;
 }
-
-#menu > li {
+#menu > li{
     float:left;
 }
-
-#menu li a {
+#menu li a{
     color:white;
     text-decoration:none;
     padding: 25px;
     font-weight: 700;
-    display:block;
 }
-
-#menu li a:hover {
-    border-radius: 10px;
-    background-color:#14C38E;
+#menu li a:hover{
+    background-color: #1C82AD;
+    color: Black;
 }
-
-#menu li ul {
-    display:none;
+#menu li ul{
+    display: none;
     position:absolute;
-    min-width:200px;
-} 
-
-#menu li:hover > ul {
+}
+#menu li:hover > ul{
     display:block;
+    color: Black;
+}
+li{
+    margin-top: 26px;
+    position: relative;
+    z-index: 1;
+    transition: .7s;
+}
+li:hover{
+    background-color: #1C82AD;
+    padding-top: 20px;
 }

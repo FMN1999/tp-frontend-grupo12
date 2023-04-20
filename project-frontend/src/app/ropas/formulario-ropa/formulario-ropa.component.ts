@@ -8,6 +8,7 @@ import { RopasService } from '../../services/ropas.service';
 import { TemporadasService } from '../../services/temporadas.service';
 import { TiporopasService } from '../../services/tiporopas.service';
 import {PreciosropaService} from '../../services/preciosropa.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-formulario-ropa',
@@ -192,11 +193,16 @@ export class FormularioRopaComponent implements OnInit {
 
   eliminarRopa(){
     //Compruebo si el índice es diferente de nulo
-    if(this.indiceRopa != null){
+    /*if(this.indiceRopa != null){
       if(confirm('¿Desea eliminar la ropa seleccionada?')){
         this.ropaService.eliminarRopa(this.indiceRopa).subscribe((datos) => console.log(datos));
       }
-    }
+    }*/
+
+    swal("¿Desea eliminar la ropa?", {
+      buttons: ["Si", "No"]
+    });
+
     this.router.navigate(['']);
   }
 
@@ -207,9 +213,3 @@ export class FormularioRopaComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-

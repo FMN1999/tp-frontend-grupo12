@@ -8,9 +8,9 @@
       <p><strong>Talle:</strong> {{ropa.talle}}</p>
       <p><strong>Detalle:</strong> {{ropa.detalle}}</p>  
       <br>
-      <button class="btnComentarios fa-solid fa-comments" [routerLink]="['/verComentarios', indice]"></button>
+      <button class="btnComentarios fa-solid fa-comments" [routerLink]="['/verComentarios', indice]" title="Ver comentarios"></button>
       <br>
-      <a [routerLink]="['/ropas', indice]">Editar/Eliminar</a>
+      <a [routerLink]="['/ropas', indice]" title="Editar o eliminar ropa">Editar/Eliminar</a>
       <br>
       <a [routerLink]="['/comentariosropa', indice]">Agregar comentario</a>
       <br>
