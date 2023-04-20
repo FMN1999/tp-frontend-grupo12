@@ -6,9 +6,6 @@ import { ComentariosRopaComponent } from './ropas/comentarios-ropa/comentarios-r
 import { HomeComponent } from './home/home.component';
 import { ComentarioRopaComponent } from './ropas/comentarios-ropa/comentario-ropa/comentario-ropa.component';
 
-
-
-//Aca van a ir las rutas de la aplicación
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'ropas', component: RopasComponent},

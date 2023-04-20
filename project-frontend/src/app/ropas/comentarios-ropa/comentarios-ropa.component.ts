@@ -29,5 +29,4 @@ export class ComentariosRopaComponent implements OnInit {
       this.router.navigate(['']);}
     );
   }
-
 }

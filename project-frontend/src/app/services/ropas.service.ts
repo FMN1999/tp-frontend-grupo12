@@ -16,7 +16,6 @@ export class RopasService {
   ropas:any= [];
   constructor(private httpClientService: HttpClient) { }
 
-
   get refresh$(){
     return this._refresh$;
   }
@@ -26,9 +25,6 @@ export class RopasService {
     return this.httpClientService.get<any>(url);
   }
 
-
-  //Este método posee la variación en milisegundos del retorno de una ropa para su edición o 
-  //eliminado. Variarlo según sea necesario
   getRopaById = (id) => {
     const url = this.baseURL + `ropas/${id}`;
     let ropa;
