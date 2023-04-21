@@ -25,6 +25,6 @@ export class ComentariosRopaService {
 
   getComentariosById = (id) => {
     const url = this.url + `comentariosropa/${id}`;
-    return this.httpClientService.get<any>(url);
+    return this.httpClientService.get<ComentarioRopa>(url);
   }
 }

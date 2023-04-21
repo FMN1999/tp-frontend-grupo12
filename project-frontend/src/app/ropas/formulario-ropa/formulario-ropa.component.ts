@@ -30,6 +30,9 @@ export class FormularioRopaComponent implements OnInit {
   habilitaBoton: boolean;
   modoEliminar: boolean = false;
 
+
+
+  //Inyecto el servicio de Router
   constructor(private router: Router,
               private route: ActivatedRoute,
               private ropaService: RopasService,
@@ -38,13 +41,17 @@ export class FormularioRopaComponent implements OnInit {
               private precioRopaService: PreciosropaService) { }
 
   ngOnInit(): void {
+
     this.indiceRopa = this.route.snapshot.params['id'];
+
+
     if(this.indiceRopa != null){
       this.habilitaBoton = true;
       document.getElementById('btnAgregar').innerHTML = "Editar";
       this.getRopaById(this.indiceRopa)
       .then( (ropaParam) => this.mapearDeDatos(ropaParam))
     }
+
   }
 
   private mapearDeDatos(ropa: Ropa) {
@@ -64,11 +71,13 @@ export class FormularioRopaComponent implements OnInit {
     this.tipoRopaInput = tipoRopa._id;
     this.temporadaInput = temporada.detalle;
     this.precioRopaInput = precioRopa._id;
+
     if(this.marcaInput != null && this.categoriaInput != null && this.talleInput != null
       && this.detalleInput != null && this.tipoRopaInput != null && this.temporadaInput != null 
       && this.precioRopaInput != null){
       this.habilitaBoton = false;
     }
+
   }
 
   getRopaById(id:String){
@@ -88,12 +97,14 @@ export class FormularioRopaComponent implements OnInit {
   }
 
   guardarRopa(){
+      console.log("Hola");
       let tempoNueva = new Temporada();
       let tipoRopaNueva = new TipoRopa();
       let precioRopaNueva = new PrecioRopa();
       if (this.modoEliminar==false){
         if (this.indiceRopa != null){
           let ropa = new Ropa();
+  
           ropa.categoria = this.categoriaInput;
           ropa.detalle = this.detalleInput;
           ropa.marca = this.marcaInput;
@@ -113,7 +124,7 @@ export class FormularioRopaComponent implements OnInit {
           this.getPrecioRopaByImporte(this.precioRopaInput)
           .then( (proParam) => {
             precioRopaNueva = proParam[0];
-            ropa.precioRopa = precioRopaNueva._id;  
+            ropa.precioRopa = precioRopaNueva._id;           
             Swal.fire({
               title: 'Estas seguro?',
               text: "Editarás esta prenda",
@@ -150,10 +161,9 @@ export class FormularioRopaComponent implements OnInit {
           .catch(error => console.log(error));
           this.getPrecioRopaByImporte(this.precioRopaInput)
           .then( (proParam) => {
-            precioRopaNueva = proParam[0];  
+            precioRopaNueva = proParam[0]; 
             let ropa1 = new Ropa(this.marcaInput, this.categoriaInput, this.talleInput,
-              this.detalleInput, tipoRopaNueva._id, tempoNueva._id, precioRopaNueva._id);
-              
+              this.detalleInput, tipoRopaNueva._id, tempoNueva._id, precioRopaNueva._id);              
               Swal.fire({
                 title: 'Estas seguro?',
                 text: "Estas a punto de agregar una nueva prenda!",
@@ -178,7 +188,6 @@ export class FormularioRopaComponent implements OnInit {
         }
       }
   }
-
   eliminarRopa(){
     this.modoEliminar = true;
     if(this.indiceRopa != null && this.modoEliminar==true){
@@ -208,4 +217,4 @@ export class FormularioRopaComponent implements OnInit {
     console.log("Texto de búsqueda: " + texto_busqueda);
     this.ropaService.buscar(texto_busqueda);
   }
-  }
+}
